@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-libre: var(--font-libre), "Times New Roman", Times, serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes floatBack {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-15px) rotate(-8deg); }
+}
+@keyframes floatMid {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(-1deg); }
+}
+@keyframes floatFront {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shake-vibrate {
+  0%, 85%, 100% { transform: scale(1) rotate(0deg); }
+  87% { transform: scale(1.15) rotate(-10deg); }
+  89% { transform: scale(1.15) rotate(10deg); }
+  91% { transform: scale(1.15) rotate(-10deg); }
+  93% { transform: scale(1.15) rotate(10deg); }
+  95% { transform: scale(1.15) rotate(-5deg); }
+  97% { transform: scale(1.15) rotate(5deg); }
+  99% { transform: scale(1) rotate(0deg); }
+}
+
+.animate-shake-vibrate {
+  animation: shake-vibrate 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-150%) skewX(-15deg); }
+  30%, 100% { transform: translateX(200%) skewX(-15deg); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes socialFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 0px 0px transparent;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 10px 25px 0px var(--glow-color);
+    border-color: var(--border-glow);
+  }
+}
+.animate-social-float {
+  animation: socialFloat 3s ease-in-out infinite;
+}

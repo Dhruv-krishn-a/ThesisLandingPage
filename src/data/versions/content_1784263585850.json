@@ -1,0 +1,353 @@
+{
+  "faqs": {
+    "items": [
+      {
+        "a": "<p>No. WRIRK does not provide research writing services. We believe that every research work should remain the original intellectual contribution of its author.</p>",
+        "q": "Does WRIRK provide research writing services?"
+      },
+      {
+        "a": "<p>We provide Publication Assistance and Research Collaboration & Co-Authorship Support. Our experts help researchers identify suitable journals, assist with manuscript formatting according to journal guidelines, support journal communication, and guide them throughout the publication process.</p>",
+        "q": "What services does WRIRK provide?"
+      },
+      {
+        "a": "Yes. If your manuscript is ready, our Publication Assistance service helps you identify suitable journals, assists with manuscript formatting according to journal requirements, supports journal communication, and guides you throughout the submission and publication process.",
+        "q": "Can you help if my research paper is already completed?"
+      },
+      {
+        "a": "Yes. Based on your research area, publication goals, and manuscript, our experts recommend suitable journals that best match your research objectives, indexing requirements, and publication preferences.",
+        "q": "Can you help me choose the right journal?"
+      },
+      {
+        "a": "We facilitate ethical research collaboration by connecting eligible researchers with compatible academic partners based on research interests and publication objectives. Throughout the collaboration, we provide publication guidance while ensuring transparency, genuine contribution, and proper authorship practices.",
+        "q": "How does the Research Collaboration & Co-Authorship service work?"
+      },
+      {
+        "a": "Yes. Our team assists researchers with journal communication, submission follow-ups, and publication-related correspondence to help ensure a smooth publication experience.",
+        "q": "Do you communicate with journals during the publication process?"
+      },
+      {
+        "a": "Absolutely. Every research project is handled with complete confidentiality. Your research documents, personal information, and publication details remain secure and are never shared without your permission.",
+        "q": "Is my research kept confidential?"
+      },
+      {
+        "a": "No. The final publication decision always depends on the journal's editorial policies and peer-review process. Our role is to help researchers choose suitable journals, assist with publication requirements, and provide guidance throughout the publication journey.",
+        "q": "Do you guarantee publication?"
+      },
+      {
+        "a": "Publication timelines vary depending on the journal, research domain, and peer-review process. During your consultation, our experts will explain the expected timeline based on your publication requirements and the selected journal.",
+        "q": "How long does the publication process usually take?"
+      },
+      {
+        "a": "Our experts provide publication support across a wide range of disciplines, including Engineering, Management, Medical & Healthcare, Computer Science, Life Sciences, Social Sciences, Commerce, Humanities, Education, and many more.",
+        "q": "What research domains do you support?"
+      },
+      {
+        "a": "Simply fill out the consultation form or contact our team. One of our publication experts will understand your publication requirements, recommend the most suitable support, and guide you through the next steps.",
+        "q": "How do I get started?"
+      }
+    ],
+    "heading": {
+      "value": "Frequently Asked Questions",
+      "baseline": 26
+    },
+    "description": [
+      {
+        "value": "Everything You Need to Know About Our Research Guidance & Publication Support",
+        "baseline": 77
+      }
+    ]
+  },
+  "hero": {
+    "button1": {
+      "value": "Get Free Publication Consultation",
+      "baseline": 33
+    },
+    "button2": {
+      "value": "Talk to a Publication Expert",
+      "baseline": 28
+    },
+    "headline": {
+      "value": "From Journal Selection to Publication, Expert Support Every Step of the Way.",
+      "baseline": 79
+    },
+    "description": [
+      {
+        "value": "Whether you're preparing your first manuscript, looking for the right journal, or seeking expert publication guidance, WRIRK helps researchers navigate the publication journey with confidence, transparency, and academic integrity.",
+        "baseline": 226
+      }
+    ],
+    "integrityBold": {
+      "value": "At WRIRK, your research always remains your intellectual property.",
+      "baseline": 64
+    },
+    "integrityText": [
+      {
+        "value": "We provide expert mentorship, publication guidance, manuscript improvement support, journal selection assistance, and submission guidance-helping you publish with confidence while maintaining the highest standards of academic integrity.",
+        "baseline": 231
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "youtube": "https://www.youtube.com/@Wrirk_1",
+      "facebook": "https://www.facebook.com/wrirk/",
+      "linkedin": "https://www.linkedin.com/company/wrirk/",
+      "whatsapp": "https://chat.whatsapp.com/IUUfrrGfyBNH6exy1JzOEA",
+      "instagram": "https://www.instagram.com/wrirk_/"
+    },
+    "description": [
+      {
+        "value": "We provide customized support for research scholars, from creating clear research outlines to offering expert reviews.",
+        "baseline": 118
+      }
+    ]
+  },
+  "metrics": [
+    {
+      "icon": "Clock",
+      "label": "Years of Research Guidance",
+      "value": "12+"
+    },
+    {
+      "icon": "Users",
+      "label": "Experts & PhD Consultants",
+      "value": "150+"
+    },
+    {
+      "icon": "FileCheck2",
+      "label": "Researchers Supported",
+      "value": "1,000+"
+    },
+    {
+      "icon": "ShieldCheck",
+      "label": "Publication Support",
+      "value": "Confidential & Ethical"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": "step-1",
+        "desc": "Our team connects you with a domain expert who understands your research area, discusses your publication requirements, and provides personalized guidance based on your goals.",
+        "step": "01",
+        "title": "Technical Discussion"
+      },
+      {
+        "id": "step-2",
+        "desc": "Our experts carefully review your manuscript to evaluate its quality, publication readiness, and identify areas that may need improvement before submission.",
+        "step": "02",
+        "title": "Manuscript Review"
+      },
+      {
+        "id": "step-3",
+        "desc": "Based on your research area, manuscript quality, indexing preferences, and publication requirements, we recommend suitable journals that best align with your publication goals.",
+        "step": "03",
+        "title": "Journal Recommendation"
+      },
+      {
+        "id": "step-4",
+        "desc": "Once the journal is finalized, our team guides you throughout the submission and publication process, providing continuous support until your publication journey is successfully completed.",
+        "step": "04",
+        "title": "Publication Assistance"
+      }
+    ],
+    "heading": {
+      "value": "Our Support Process",
+      "baseline": 19
+    },
+    "description": [
+      {
+        "value": "Helping You at Every Stage of Your Research Journey",
+        "baseline": 51
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "id": 1,
+      "link": "https://share.google/I98YdZe39NaYJIrzS",
+      "image": "/reviews/AnjaliJagtiani.png",
+      "stars": 5,
+      "author": "Anjali Jagtiani",
+      "reviewText": "<p>I&nbsp;would&nbsp;like&nbsp;to&nbsp;express&nbsp;my&nbsp;sincere&nbsp;gratitude&nbsp;to&nbsp;WRIRK&nbsp;Publication&nbsp;for&nbsp;their&nbsp;exceptional&nbsp;guidance&nbsp;and&nbsp;support&nbsp;during&nbsp;the&nbsp;initial&nbsp;stage&nbsp;of&nbsp;my&nbsp;PhD&nbsp;journey,&nbsp;especially&nbsp;while&nbsp;preparing&nbsp;and&nbsp;submitting&nbsp;my&nbsp;synopsis.&nbsp;Being&nbsp;completely&nbsp;new&nbsp;to&nbsp;the&nbsp;research&nbsp;process,&nbsp;I&nbsp;initially&nbsp;found&nbsp;it&nbsp;quite&nbsp;overwhelming.&nbsp;However,&nbsp;their&nbsp;expert&nbsp;assistance,&nbsp;timely&nbsp;guidance,&nbsp;and&nbsp;constant&nbsp;encouragement&nbsp;made&nbsp;the&nbsp;entire&nbsp;process&nbsp;smooth&nbsp;and&nbsp;manageable.&nbsp;Thank&nbsp;you&nbsp;team.&nbsp;Looking&nbsp;forward&nbsp;for&nbsp;more&nbsp;support&nbsp;like&nbsp;this.</p>"
+    },
+    {
+      "id": 2,
+      "link": "https://share.google/I98YdZe39NaYJIrzS",
+      "image": "/reviews/SurajitSarkar.png",
+      "stars": 5,
+      "author": "Surajit Sarkar",
+      "reviewText": "<p>Great&nbsp;insights&nbsp;shared&nbsp;by&nbsp;then&nbsp;which&nbsp;lead&nbsp;to&nbsp;upliftment&nbsp;of&nbsp;my&nbsp;research&nbsp;work.&nbsp;Will&nbsp;definitely&nbsp;use&nbsp;their&nbsp;services&nbsp;again.</p>"
+    },
+    {
+      "id": 3,
+      "link": "https://share.google/I98YdZe39NaYJIrzS",
+      "image": "/reviews/BinduJacob.png",
+      "stars": 5,
+      "author": "Bindu Jacob",
+      "reviewText": "<p>I&nbsp;sincerely&nbsp;appreciate&nbsp;your&nbsp;invaluable&nbsp;support&nbsp;in&nbsp;my&nbsp;research&nbsp;work,&nbsp;Thank&nbsp;you&nbsp;so&nbsp;much&nbsp;for&nbsp;your&nbsp;help&nbsp;in&nbsp;my&nbsp;research.&nbsp;Your&nbsp;guidance&nbsp;and&nbsp;support&nbsp;made&nbsp;a&nbsp;big&nbsp;difference,&nbsp;and&nbsp;I&nbsp;truly&nbsp;appreciate&nbsp;the&nbsp;time&nbsp;and&nbsp;effort&nbsp;you&nbsp;put&nbsp;in&nbsp;to&nbsp;assist&nbsp;me.</p>"
+    },
+    {
+      "id": 4,
+      "link": "https://share.google/FwOiZXUf1jq5oidyp",
+      "image": "https://ui-avatars.com/api/?name=Shweta&background=0A1326&color=22D3EE&size=128",
+      "stars": 5,
+      "author": "Shweta",
+      "reviewText": "<p>My&nbsp;research&nbsp;experience&nbsp;with&nbsp;this&nbsp;organization&nbsp;has&nbsp;been&nbsp;truly&nbsp;enriching&nbsp;and&nbsp;highly&nbsp;positive.&nbsp;Among&nbsp;all&nbsp;the&nbsp;resource&nbsp;persons&nbsp;I&nbsp;have&nbsp;interacted&nbsp;with,&nbsp;Ms.&nbsp;Nandini&nbsp;Khandelwal&nbsp;has&nbsp;been&nbsp;exceptionally&nbsp;supportive&nbsp;and&nbsp;outstanding&nbsp;in&nbsp;her&nbsp;guidance.&nbsp;She&nbsp;has&nbsp;always&nbsp;taken&nbsp;the&nbsp;time&nbsp;to&nbsp;understand&nbsp;my&nbsp;concerns&nbsp;in&nbsp;depth&nbsp;and&nbsp;provided&nbsp;effective&nbsp;solutions&nbsp;with&nbsp;great&nbsp;clarity&nbsp;and&nbsp;patience.&nbsp;Her&nbsp;continuous&nbsp;support&nbsp;played&nbsp;a&nbsp;significant&nbsp;role&nbsp;in&nbsp;helping&nbsp;me&nbsp;overcome&nbsp;challenges,&nbsp;including&nbsp;moments&nbsp;of&nbsp;anxiety&nbsp;and&nbsp;stress&nbsp;during&nbsp;my&nbsp;research&nbsp;journey.&nbsp;Without&nbsp;her&nbsp;guidance,&nbsp;I&nbsp;believe&nbsp;it&nbsp;would&nbsp;have&nbsp;been&nbsp;difficult&nbsp;for&nbsp;me&nbsp;to&nbsp;adapt&nbsp;so&nbsp;effectively&nbsp;within&nbsp;the&nbsp;organization.&nbsp;I&nbsp;sincerely&nbsp;express&nbsp;my&nbsp;heartfelt&nbsp;gratitude&nbsp;to&nbsp;Ms.&nbsp;Nandini&nbsp;Khandelwal&nbsp;her&nbsp;constant&nbsp;availability,&nbsp;encouragement,&nbsp;and&nbsp;dedication.&nbsp;She&nbsp;is&nbsp;not&nbsp;only&nbsp;an&nbsp;excellent&nbsp;professional&nbsp;but&nbsp;also&nbsp;a&nbsp;wonderful&nbsp;human&nbsp;being.&nbsp;Overall,&nbsp;my&nbsp;experience&nbsp;has&nbsp;been&nbsp;extremely&nbsp;rewarding.&nbsp;Thank&nbsp;you.</p>"
+    },
+    {
+      "id": 5,
+      "link": "https://share.google/rH921sslJB6iRlpsi",
+      "image": "https://ui-avatars.com/api/?name=RAJIV+JAIN&background=0A1326&color=22D3EE&size=128",
+      "stars": 5,
+      "author": "RAJIV JAIN",
+      "reviewText": "<p>The&nbsp;team&nbsp;supported&nbsp;me&nbsp;throughout&nbsp;the&nbsp;research&nbsp;process&nbsp;and&nbsp;ensured&nbsp;the&nbsp;delivery&nbsp;of&nbsp;high-quality&nbsp;work.&nbsp;I&nbsp;recommend&nbsp;them&nbsp;for&nbsp;reliable&nbsp;and&nbsp;high-quality&nbsp;research&nbsp;paper&nbsp;writing.</p>"
+    },
+    {
+      "id": 6,
+      "link": "https://share.google/6BnTBLenr0ldLWSnW",
+      "image": "https://ui-avatars.com/api/?name=Ilakshi+Singh&background=0A1326&color=22D3EE&size=128",
+      "stars": 5,
+      "author": "Ilakshi Singh",
+      "reviewText": "<p>I&nbsp;recently&nbsp;availed&nbsp;services&nbsp;from&nbsp;WRIRK-MP&nbsp;Research&nbsp;Work,&nbsp;and&nbsp;I’m&nbsp;highly&nbsp;satisfied&nbsp;with&nbsp;the&nbsp;overall&nbsp;experience.&nbsp;The&nbsp;team&nbsp;was&nbsp;knowledgeable,&nbsp;cooperative,&nbsp;and&nbsp;delivered&nbsp;quality&nbsp;work&nbsp;within&nbsp;the&nbsp;promised&nbsp;timeline.&nbsp;Their&nbsp;understanding&nbsp;of&nbsp;research&nbsp;and&nbsp;professionalism&nbsp;stood&nbsp;out.&nbsp;Due&nbsp;to&nbsp;their&nbsp;guidance&nbsp;I&nbsp;able&nbsp;to&nbsp;seek&nbsp;admission.</p>"
+    },
+    {
+      "id": 7,
+      "link": "https://share.google/6fmBNZAXKKazL5RvN",
+      "image": "https://ui-avatars.com/api/?name=Saloni+Dawar&background=0A1326&color=22D3EE&size=128",
+      "stars": 5,
+      "author": "Saloni Dawar",
+      "reviewText": "<p>They&nbsp;minutely&nbsp;check&nbsp;and&nbsp;tell&nbsp;you&nbsp;in&nbsp;details&nbsp;what&nbsp;needs&nbsp;to&nbsp;be&nbsp;done&nbsp;to&nbsp;improvise&nbsp;in&nbsp;the&nbsp;paper&nbsp;to&nbsp;publish&nbsp;it&nbsp;in&nbsp;a&nbsp;good&nbsp;and&nbsp;indexed&nbsp;journal.</p>"
+    }
+  ],
+  "services": {
+    "cards": [
+      {
+        "id": "assistance",
+        "desc": "Receive expert support in publishing your completed research paper. We help you identify suitable journals, prepare your manuscript according to journal requirements, and guide you through the submission and publication process.",
+        "icon": "Send",
+        "title": "Publication Assistance"
+      },
+      {
+        "id": "co-authorship",
+        "desc": "Access ethical research collaboration opportunities with compatible researchers. We facilitate the collaboration process and provide guidance throughout publication while ensuring proper contribution and authorship practices.",
+        "icon": "Users",
+        "title": "Research Collaboration & Co-Authorship"
+      }
+    ],
+    "heading": {
+      "value": "Our Services",
+      "baseline": 12
+    },
+    "description": [
+      {
+        "value": "Tailored publication strategies designed to meet the rigorous demands of global indexing databases.",
+        "baseline": 98
+      }
+    ]
+  },
+  "whyTrustUs": {
+    "quote": {
+      "value": "A research paper is more than a publication\nit's your contribution to the global academic community.",
+      "baseline": 101
+    },
+    "heading": {
+      "value": "Why Publishing Your Research Matters",
+      "baseline": 41
+    },
+    "features": [
+      {
+        "icon": "TrendingUp",
+        "title": "Career Growth",
+        "description": "Build a stronger academic profile with publications that support promotions, faculty appointments, doctoral requirements, and professional recognition."
+      },
+      {
+        "icon": "Globe",
+        "title": "Global Visibility",
+        "description": "Increase the reach of your research by publishing in journals that are recognized and accessed by researchers across the world."
+      },
+      {
+        "icon": "Award",
+        "title": "Research Credibility",
+        "description": "Publishing in suitable peer-reviewed journals enhances the credibility of your work and demonstrates the quality of your research."
+      },
+      {
+        "icon": "BookOpen",
+        "title": "Future Opportunities",
+        "description": "A strong publication record opens doors to research collaborations, grants, higher education opportunities, and professional advancement."
+      }
+    ]
+  },
+  "globalSettings": {
+    "seoTitle": {
+      "value": "WRIRK - Publish Your Research with Confidence.",
+      "baseline": 45
+    },
+    "contactEmail": {
+      "value": "contact@wrirk.com",
+      "baseline": 17
+    },
+    "seoDescription": {
+      "value": "Expert research writing guidance, publication support, and co-authorship opportunities.",
+      "baseline": 87
+    },
+    "whatsappNumber": {
+      "value": "+919548521866",
+      "baseline": 13
+    }
+  },
+  "trustedPartner": {
+    "heading": {
+      "value": "More Than Publication Support\nA Trusted Research Partner",
+      "baseline": 56
+    },
+    "ctaText1": {
+      "value": "At WRIRK, we don't believe in shortcuts.",
+      "baseline": 40
+    },
+    "ctaText2": {
+      "value": "We believe in helping researchers produce stronger work through expert guidance, transparent processes, and ethical publication practices.",
+      "baseline": 139
+    },
+    "features": [
+      {
+        "icon": "ShieldCheck",
+        "title": "Ethical Research Guidance",
+        "description": "We mentor and guide researchers while respecting authorship, originality, and academic integrity."
+      },
+      {
+        "icon": "Users",
+        "title": "Experienced Research Experts",
+        "description": "Work with experienced research professionals and subject specialists who understand publication standards across multiple disciplines."
+      },
+      {
+        "icon": "FileCheck2",
+        "title": "Confidential & Secure",
+        "description": "Your research remains private and protected throughout the consultation and publication process."
+      },
+      {
+        "icon": "Activity",
+        "title": "Personalized Publication Strategy",
+        "description": "Every researcher has different goals. We recommend publication pathways based on your discipline, research stage, and publication objectives."
+      },
+      {
+        "icon": "BookOpen",
+        "title": "Journal Selection Expertise",
+        "description": "We help identify journals that align with your research scope, publication requirements, and academic goals."
+      },
+      {
+        "icon": "ArrowRight",
+        "title": "End-to-End Guidance",
+        "description": "From manuscript review to journal submission and publication support, our team remains with you throughout the process."
+      }
+    ],
+    "ctaHeading": {
+      "value": "Research with Integrity. Publish with Confidence.",
+      "baseline": 49
+    }
+  },
+  "_versionMetadata": {
+    "description": "Updated footer whatsapp",
+    "timestamp": 1784263585850
+  }
+}

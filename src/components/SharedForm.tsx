@@ -7,9 +7,10 @@ interface SharedFormProps {
   formId: string;
   buttonText?: string;
   buttonIcon?: React.ReactNode;
+  onSuccess?: () => void;
 }
 
-export default function SharedForm({ formId, buttonText = "Submit", buttonIcon }: SharedFormProps) {
+export default function SharedForm({ formId, buttonText = "Submit", buttonIcon, onSuccess }: SharedFormProps) {
   const [formState, setFormState] = useState({ name: '', phone: '', email: '', message: '' });
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { ChevronDown, BookOpen, Award, TrendingUp, Users, Clock, ShieldCheck, PenTool, Send, PhoneCall, ArrowRight, FileCheck2, Quote, Activity, Globe, CheckCircle, Star } from 'lucide-react';
+import { ChevronDown, BookOpen, Award, TrendingUp, Users, Clock, ShieldCheck, PenTool, Send, PhoneCall, ArrowRight, FileCheck2, Quote, Activity, Globe, CheckCircle, Star, Sparkles } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import SharedForm from '@/components/SharedForm';
 import ReviewCarousel from '@/components/ReviewCarousel';
@@ -137,7 +137,7 @@ export default function ClientPage({ initialContent }: { initialContent: any }) 
               </a>
             ))}
           </nav>
-          <a href="#contact" className="relative px-6 py-2.5 rounded-full border border-white/20 bg-black/40 backdrop-blur-md hover:border-amber-400 text-xs font-semibold uppercase tracking-[0.1em] text-stone-300 hover:text-white transition-all duration-500 shadow-lg group overflow-hidden hover:shadow-[0_0_20px_rgba(217,119,6,0.4)]">
+          <a href="#final-cta" className="relative px-5 py-2 rounded-full border border-amber-500/40 bg-amber-500/10 backdrop-blur-md hover:border-amber-400 text-xs font-semibold uppercase tracking-[0.1em] text-stone-200 hover:text-white transition-all duration-500 shadow-[0_0_15px_rgba(217,119,6,0.2)] group overflow-hidden hover:shadow-[0_0_25px_rgba(217,119,6,0.5)]">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-600/30 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none"></div>
             <span className="relative z-10 flex items-center gap-2">Consult Us <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform duration-300" /></span>
           </a>
@@ -386,6 +386,58 @@ export default function ClientPage({ initialContent }: { initialContent: any }) 
               ))}
             </div>
           </div>
+        </section>
+
+
+        {/* Final Bottom CTA Banner with Live Form */}
+        <section className="py-16 md:py-20 px-6 relative z-10 overflow-hidden" id="final-cta">
+          <FadeIn>
+            <div className="max-w-6xl mx-auto bg-gradient-to-r from-[#0e0e14] via-[#16121e] to-[#0e0e14] border border-amber-500/40 rounded-3xl p-8 md:p-12 relative shadow-[0_25px_70px_rgba(0,0,0,0.85)] overflow-hidden group">
+              
+              {/* Background ambient lighting */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/20 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
+              <div className="absolute bottom-0 left-0 w-96 h-96 bg-amber-700/15 rounded-full blur-[100px] pointer-events-none translate-y-1/2 -translate-x-1/3"></div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+                
+                {/* Left Side: Headline & Description */}
+                <div className="lg:col-span-6 space-y-6 text-left">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold uppercase tracking-widest backdrop-blur-md">
+                    <Sparkles className="h-3.5 w-3.5 text-amber-400" /> Start Your Thesis Journey
+                  </div>
+
+                  <h2 className="text-3xl md:text-5xl font-serif text-white leading-tight drop-shadow-md">
+                    Ready to Complete Your Thesis with Confidence?
+                  </h2>
+
+                  <p className="text-stone-300 font-light text-base md:text-lg leading-relaxed">
+                    Connect with our domain experts today for 1-on-1 personalized thesis guidance tailored to your university requirements.
+                  </p>
+
+                  <div className="pt-2 flex flex-col gap-3">
+                    <div className="flex items-center gap-3 text-stone-200 text-sm font-medium">
+                      <CheckCircle className="h-4 w-4 text-amber-400 shrink-0" />
+                      <span>100% Academic Integrity & Confidentiality</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-stone-200 text-sm font-medium">
+                      <CheckCircle className="h-4 w-4 text-amber-400 shrink-0" />
+                      <span>Expert Support Across All Disciplines</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Side: Embedded Live Contact Form */}
+                <div className="lg:col-span-6">
+                  <div className="bg-black/60 backdrop-blur-xl border border-amber-500/30 rounded-2xl p-6 md:p-8 shadow-2xl relative">
+                    <h3 className="text-xl font-serif text-white mb-6 text-center border-b border-white/10 pb-3">Request Confidential Review</h3>
+                    <SharedForm formId="bottom-cta" buttonText="Request Confidential Review" />
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </FadeIn>
         </section>
 
       </div> {/* End Main Content Wrapper */}

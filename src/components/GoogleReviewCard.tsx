@@ -9,7 +9,6 @@ const stripHtml = (html: string) => {
   return html.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ').trim();
 };
 
-
 const RichTextRenderer = ({ content, className }: { content: string, className?: string }) => {
   if (!content) return null;
   if (/<[a-z][\s\S]*>/i.test(content)) {
@@ -58,27 +57,26 @@ export default function GoogleReviewCard({ review }: Props) {
   return (
     <>
       {/* The Review Card */}
-      <div className="flex-shrink-0 w-[320px] md:w-[400px] bg-[#060D1A] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col h-[350px] relative group hover:border-cyan-500/30 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(34,211,238,0.1)]">
+      <div className="flex-shrink-0 w-[320px] md:w-[420px] bg-[#0c0c12]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col h-[340px] relative group hover:border-amber-500/40 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(217,119,6,0.15)] shadow-lg">
         
         {/* Subtle Background Glow on Hover */}
-        <div className="absolute inset-0 bg-linear-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"></div>
         
-        <Quote className="absolute top-5 right-5 h-8 w-8 text-white/5 group-hover:text-cyan-500/10 transition-colors duration-500 pointer-events-none" />
+        <Quote className="absolute top-5 right-5 h-8 w-8 text-white/5 group-hover:text-amber-500/20 transition-colors duration-500 pointer-events-none" />
 
-        <div className="flex items-center gap-4 mb-5 relative z-10">
+        <div className="flex items-center gap-4 mb-4 relative z-10">
           <div className="relative">
-            <div className="absolute inset-0 bg-cyan-500/20 rounded-full animate-ping opacity-0 group-hover:opacity-75 transition-opacity"></div>
+            <div className="absolute inset-0 bg-amber-500/20 rounded-full animate-ping opacity-0 group-hover:opacity-75 transition-opacity"></div>
             <img 
               src={review.image} 
               alt={review.author} 
               width={56} height={56}
-              className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-white/10 group-hover:border-cyan-400/50 transition-colors duration-300 relative z-10 bg-[#0A1326]"
+              className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-white/10 group-hover:border-amber-400/50 transition-colors duration-300 relative z-10 bg-[#121218]"
               onError={(e) => {
-                // Fallback if image fails to load
-                (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author)}&background=0A1326&color=22D3EE`;
+                (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author)}&background=121218&color=D97706`;
               }}
             />
-            {/* Tiny Google Badge */}
+            {/* Google Badge */}
             <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-1 shadow-md z-20">
               <svg viewBox="0 0 24 24" className="w-3 h-3 md:w-4 md:h-4" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -89,56 +87,56 @@ export default function GoogleReviewCard({ review }: Props) {
             </div>
           </div>
           <div>
-            <h3 className="text-white font-bold text-sm md:text-base group-hover:text-cyan-50 transition-colors">{review.author}</h3>
+            <h3 className="text-white font-bold text-sm md:text-base group-hover:text-amber-300 transition-colors">{review.author}</h3>
             <div className="flex items-center gap-0.5 mt-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className={`w-3.5 h-3.5 md:w-4 md:h-4 ${i < review.stars ? 'text-amber-400 fill-amber-400 drop-shadow-[0_0_5px_rgba(251,191,36,0.6)]' : 'text-slate-600'}`} />
+                <Star key={i} className={`w-3.5 h-3.5 md:w-4 md:h-4 ${i < review.stars ? 'text-amber-400 fill-amber-400 drop-shadow-[0_0_5px_rgba(251,191,36,0.6)]' : 'text-stone-600'}`} />
               ))}
             </div>
           </div>
         </div>
 
         <div className="flex-grow relative z-10 flex flex-col">
-          <p className="text-slate-300 font-medium text-sm md:text-base leading-relaxed line-clamp-4 relative group-hover:text-slate-200 transition-colors">
+          <p className="text-stone-300 font-medium text-sm md:text-base leading-relaxed line-clamp-4 relative group-hover:text-stone-100 transition-colors">
             {stripHtml(review.reviewText)}
           </p>
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="text-cyan-400 hover:text-cyan-300 text-xs md:text-sm font-bold mt-2 text-left w-fit active:scale-95 transition-transform"
+            className="text-amber-400 hover:text-amber-300 text-xs md:text-sm font-bold mt-2 text-left w-fit active:scale-95 transition-transform"
           >
             Read more
           </button>
         </div>
 
-        <div className="mt-4 pt-4 border-t border-white/5 relative z-10">
+        <div className="mt-4 pt-3 border-t border-white/5 relative z-10">
           <a 
             href={review.link} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center justify-between w-full px-4 py-3 bg-[#0A1326] hover:bg-cyan-950/40 border border-white/5 hover:border-cyan-500/30 rounded-xl transition-all duration-300 active:scale-95 group/btn"
+            className="flex items-center justify-between w-full px-4 py-2.5 bg-black/40 hover:bg-amber-950/40 border border-white/10 hover:border-amber-500/40 rounded-xl transition-all duration-300 active:scale-95 group/btn"
           >
-            <span className="text-xs md:text-sm font-bold text-slate-300 group-hover/btn:text-white transition-colors">View on Google</span>
-            <ExternalLink className="w-4 h-4 text-slate-500 group-hover/btn:text-cyan-400 transition-colors" />
+            <span className="text-xs md:text-sm font-bold text-stone-300 group-hover/btn:text-white transition-colors">View on Google</span>
+            <ExternalLink className="w-4 h-4 text-stone-500 group-hover/btn:text-amber-400 transition-colors" />
           </a>
         </div>
       </div>
 
-      {/* The Animated Full-Screen Modal */}
+      {/* Full-Screen Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6 sm:px-6">
           {/* Backdrop */}
           <div 
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-[fadeIn_0.3s_ease-out_forwards]"
+            className="absolute inset-0 bg-black/85 backdrop-blur-md animate-[fadeIn_0.3s_ease-out_forwards]"
             onClick={() => setIsModalOpen(false)}
           ></div>
           
           {/* Modal Content */}
-          <div className="relative bg-linear-to-b from-[#060D1A] to-[#02050D] border border-cyan-900/50 w-full max-w-2xl rounded-2xl p-6 md:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.8)] animate-[slideUpScale_0.4s_ease-out_forwards] flex flex-col max-h-full">
+          <div className="relative bg-[#0c0c12] border border-amber-500/30 w-full max-w-2xl rounded-2xl p-6 md:p-10 shadow-[0_25px_70px_rgba(0,0,0,0.9)] animate-[slideUpScale_0.4s_ease-out_forwards] flex flex-col max-h-full z-10">
             
             {/* Close Button */}
             <button 
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 md:top-6 md:right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white active:scale-95 transition-all"
+              className="absolute top-4 right-4 md:top-6 md:right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-stone-400 hover:text-white active:scale-95 transition-all"
               aria-label="Close review modal"
             >
               <X className="w-5 h-5" />
@@ -150,27 +148,27 @@ export default function GoogleReviewCard({ review }: Props) {
                 src={review.image} 
                 alt={review.author} 
                 width={80} height={80}
-                className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-cyan-500/30 shadow-[0_0_20px_rgba(34,211,238,0.2)] bg-[#0A1326]"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-amber-500/40 shadow-[0_0_20px_rgba(217,119,6,0.3)] bg-[#121218]"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author)}&background=0A1326&color=22D3EE`;
+                  (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author)}&background=121218&color=D97706`;
                 }}
               />
               <div>
-                <h3 className="text-xl md:text-2xl font-black text-white">{review.author}</h3>
+                <h3 className="text-xl md:text-2xl font-serif text-white">{review.author}</h3>
                 <div className="flex items-center gap-1 mt-1.5 md:mt-2">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className={`w-4 h-4 md:w-5 md:h-5 ${i < review.stars ? 'text-amber-400 fill-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]' : 'text-slate-600'}`} />
+                    <Star key={i} className={`w-4 h-4 md:w-5 md:h-5 ${i < review.stars ? 'text-amber-400 fill-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]' : 'text-stone-600'}`} />
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* Modal Body (Scrollable if text is massive) */}
+            {/* Modal Body */}
             <div className="overflow-y-auto pr-2 custom-scrollbar flex-grow">
-              <Quote className="h-10 w-10 text-cyan-500/20 mb-4" />
+              <Quote className="h-10 w-10 text-amber-500/30 mb-4" />
               <RichTextRenderer 
                 content={review.reviewText} 
-                className="text-slate-200 font-medium text-base md:text-lg leading-relaxed whitespace-pre-line [&>p]:mb-4 last:[&>p]:mb-0"
+                className="text-stone-200 font-light text-base md:text-lg leading-relaxed whitespace-pre-line [&>p]:mb-4 last:[&>p]:mb-0"
               />
             </div>
 
@@ -180,7 +178,7 @@ export default function GoogleReviewCard({ review }: Props) {
                 href={review.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-linear-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl font-bold text-sm md:text-base shadow-[0_0_20px_rgba(34,211,238,0.3)] active:scale-[0.98] transition-all"
+                className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white rounded-xl font-bold text-sm md:text-base shadow-[0_0_25px_rgba(217,119,6,0.4)] active:scale-[0.98] transition-all"
               >
                 <span>Read Full Review on Google</span>
                 <ExternalLink className="w-5 h-5" />

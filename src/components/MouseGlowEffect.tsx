@@ -19,13 +19,18 @@ export default function MouseGlowEffect() {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+      {/* Subtle, Soft Ambient Background Glows that do NOT wash out text contrast */}
+      <div className="absolute top-10 left-10 w-[500px] h-[500px] rounded-full bg-amber-600/10 blur-[140px] opacity-40 pointer-events-none"></div>
+      <div className="absolute top-[40%] right-10 w-[500px] h-[500px] rounded-full bg-amber-700/10 blur-[140px] opacity-35 pointer-events-none"></div>
+
+      {/* Dynamic Soft Cursor Spotlight */}
       <div 
-        className="absolute w-[600px] h-[600px] rounded-full blur-[100px] opacity-30 mix-blend-screen"
+        className="absolute w-[600px] h-[600px] rounded-full blur-[130px] opacity-25 mix-blend-screen"
         style={{
-          background: 'radial-gradient(circle, rgba(217,119,6,0.4) 0%, rgba(159,18,57,0.1) 60%, transparent 100%)',
+          background: 'radial-gradient(circle, rgba(217,119,6,0.3) 0%, rgba(180,83,9,0.15) 50%, transparent 80%)',
           left: mousePosition.x - 300,
           top: mousePosition.y - 300,
-          transition: 'left 0.2s cubic-bezier(0.25, 1, 0.5, 1), top 0.2s cubic-bezier(0.25, 1, 0.5, 1)'
+          transition: 'left 0.15s cubic-bezier(0.25, 1, 0.5, 1), top 0.15s cubic-bezier(0.25, 1, 0.5, 1)'
         }}
       />
     </div>

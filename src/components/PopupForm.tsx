@@ -49,32 +49,31 @@ export default function PopupForm() {
     >
       {/* Dark overlay backdrop */}
       <div 
-        className="absolute inset-0 bg-[#02050D]/80 backdrop-blur-sm transition-opacity duration-500"
+        className="absolute inset-0 bg-[#02050D]/85 backdrop-blur-md transition-opacity duration-500"
         onClick={handleClose}
       ></div>
 
       {/* Modal Box */}
       <div 
-        className={`relative w-full max-w-md bg-[#060D1A] border border-cyan-900/50 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden transition-all duration-500 ease-out transform ${isVisible ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-8 scale-95 opacity-0'}`}
+        className={`relative w-full max-w-md bg-[#0c0c10]/95 backdrop-blur-2xl border border-amber-500/30 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden transition-all duration-500 ease-out transform ${isVisible ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-8 scale-95 opacity-0'}`}
         onClick={(e) => e.stopPropagation()} // Prevent clicking inside from closing it
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px] pointer-events-none -translate-y-1/2 translate-x-1/4"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/20 rounded-full blur-[80px] pointer-events-none -translate-y-1/2 translate-x-1/4"></div>
 
         <button 
           onClick={handleClose}
           aria-label="Close form"
-          className="absolute top-4 right-4 z-20 p-2 text-slate-400 hover:text-white bg-[#030712]/50 hover:bg-[#0A1326] rounded-full transition-all active:scale-90"
+          className="absolute top-4 right-4 z-20 p-2 text-stone-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all active:scale-90"
         >
           <X className="h-5 w-5" />
         </button>
 
         <div className="relative p-8 z-10">
-          <h2 className="text-2xl font-black text-white mb-6 hover:scale-105 transition-transform duration-300 cursor-default text-center">Contact <span className="text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">Us</span></h2>
+          <h2 className="text-2xl font-serif text-white mb-6 text-center border-b border-white/10 pb-4">Request a <span className="text-amber-500 drop-shadow-[0_0_10px_rgba(217,119,6,0.6)]">Confidential Review</span></h2>
           
           <SharedForm 
             formId="popup" 
             buttonText="Request Call Back" 
-            onSuccess={handleClose}
           />
         </div>
       </div>

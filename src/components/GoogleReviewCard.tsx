@@ -42,7 +42,6 @@ interface Props {
 export default function GoogleReviewCard({ review }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Prevent background scrolling when modal is open
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
@@ -57,23 +56,23 @@ export default function GoogleReviewCard({ review }: Props) {
   return (
     <>
       {/* The Review Card */}
-      <div className="flex-shrink-0 w-[320px] md:w-[420px] bg-[#0c0c12]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col h-[340px] relative group hover:border-amber-500/40 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(217,119,6,0.15)] shadow-lg">
+      <div className="flex-shrink-0 w-[320px] md:w-[420px] bg-[#070b14]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col h-[340px] relative group hover:border-cyan-500/40 transition-all duration-500 hover:shadow-[0_15px_40px_rgba(34,211,238,0.15)] shadow-lg">
         
         {/* Subtle Background Glow on Hover */}
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"></div>
         
-        <Quote className="absolute top-5 right-5 h-8 w-8 text-white/5 group-hover:text-amber-500/20 transition-colors duration-500 pointer-events-none" />
+        <Quote className="absolute top-5 right-5 h-8 w-8 text-white/5 group-hover:text-cyan-500/20 transition-colors duration-500 pointer-events-none" />
 
         <div className="flex items-center gap-4 mb-4 relative z-10">
           <div className="relative">
-            <div className="absolute inset-0 bg-amber-500/20 rounded-full animate-ping opacity-0 group-hover:opacity-75 transition-opacity"></div>
+            <div className="absolute inset-0 bg-cyan-500/20 rounded-full animate-ping opacity-0 group-hover:opacity-75 transition-opacity"></div>
             <img 
               src={review.image} 
               alt={review.author} 
               width={56} height={56}
-              className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-white/10 group-hover:border-amber-400/50 transition-colors duration-300 relative z-10 bg-[#121218]"
+              className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-white/10 group-hover:border-cyan-400/50 transition-colors duration-300 relative z-10 bg-[#0c1220]"
               onError={(e) => {
-                (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author)}&background=121218&color=D97706`;
+                (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author)}&background=0c1220&color=22D3EE`;
               }}
             />
             {/* Google Badge */}
@@ -87,7 +86,7 @@ export default function GoogleReviewCard({ review }: Props) {
             </div>
           </div>
           <div>
-            <h3 className="text-white font-bold text-sm md:text-base group-hover:text-amber-300 transition-colors">{review.author}</h3>
+            <h3 className="text-white font-bold text-sm md:text-base group-hover:text-cyan-300 transition-colors">{review.author}</h3>
             <div className="flex items-center gap-0.5 mt-1">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className={`w-3.5 h-3.5 md:w-4 md:h-4 ${i < review.stars ? 'text-amber-400 fill-amber-400 drop-shadow-[0_0_5px_rgba(251,191,36,0.6)]' : 'text-stone-600'}`} />
@@ -102,7 +101,7 @@ export default function GoogleReviewCard({ review }: Props) {
           </p>
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="text-amber-400 hover:text-amber-300 text-xs md:text-sm font-bold mt-2 text-left w-fit active:scale-95 transition-transform"
+            className="text-cyan-400 hover:text-cyan-300 text-xs md:text-sm font-bold mt-2 text-left w-fit active:scale-95 transition-transform"
           >
             Read more
           </button>
@@ -113,10 +112,10 @@ export default function GoogleReviewCard({ review }: Props) {
             href={review.link} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center justify-between w-full px-4 py-2.5 bg-black/40 hover:bg-amber-950/40 border border-white/10 hover:border-amber-500/40 rounded-xl transition-all duration-300 active:scale-95 group/btn"
+            className="flex items-center justify-between w-full px-4 py-2.5 bg-black/40 hover:bg-cyan-950/40 border border-white/10 hover:border-cyan-500/40 rounded-xl transition-all duration-300 active:scale-95 group/btn"
           >
             <span className="text-xs md:text-sm font-bold text-stone-300 group-hover/btn:text-white transition-colors">View on Google</span>
-            <ExternalLink className="w-4 h-4 text-stone-500 group-hover/btn:text-amber-400 transition-colors" />
+            <ExternalLink className="w-4 h-4 text-stone-500 group-hover/btn:text-cyan-400 transition-colors" />
           </a>
         </div>
       </div>
@@ -131,7 +130,7 @@ export default function GoogleReviewCard({ review }: Props) {
           ></div>
           
           {/* Modal Content */}
-          <div className="relative bg-[#0c0c12] border border-amber-500/30 w-full max-w-2xl rounded-2xl p-6 md:p-10 shadow-[0_25px_70px_rgba(0,0,0,0.9)] animate-[slideUpScale_0.4s_ease-out_forwards] flex flex-col max-h-full z-10">
+          <div className="relative bg-[#070b14] border border-cyan-500/30 w-full max-w-2xl rounded-2xl p-6 md:p-10 shadow-[0_25px_70px_rgba(0,0,0,0.9)] animate-[slideUpScale_0.4s_ease-out_forwards] flex flex-col max-h-full z-10">
             
             {/* Close Button */}
             <button 
@@ -148,9 +147,9 @@ export default function GoogleReviewCard({ review }: Props) {
                 src={review.image} 
                 alt={review.author} 
                 width={80} height={80}
-                className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-amber-500/40 shadow-[0_0_20px_rgba(217,119,6,0.3)] bg-[#121218]"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-cyan-500/40 shadow-[0_0_20px_rgba(34,211,238,0.3)] bg-[#0c1220]"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author)}&background=121218&color=D97706`;
+                  (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author)}&background=0c1220&color=22D3EE`;
                 }}
               />
               <div>
@@ -165,7 +164,7 @@ export default function GoogleReviewCard({ review }: Props) {
 
             {/* Modal Body */}
             <div className="overflow-y-auto pr-2 custom-scrollbar flex-grow">
-              <Quote className="h-10 w-10 text-amber-500/30 mb-4" />
+              <Quote className="h-10 w-10 text-cyan-500/30 mb-4" />
               <RichTextRenderer 
                 content={review.reviewText} 
                 className="text-stone-200 font-light text-base md:text-lg leading-relaxed whitespace-pre-line [&>p]:mb-4 last:[&>p]:mb-0"
@@ -178,7 +177,7 @@ export default function GoogleReviewCard({ review }: Props) {
                 href={review.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white rounded-xl font-bold text-sm md:text-base shadow-[0_0_25px_rgba(217,119,6,0.4)] active:scale-[0.98] transition-all"
+                className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl font-bold text-sm md:text-base shadow-[0_0_25px_rgba(34,211,238,0.4)] active:scale-[0.98] transition-all"
               >
                 <span>Read Full Review on Google</span>
                 <ExternalLink className="w-5 h-5" />

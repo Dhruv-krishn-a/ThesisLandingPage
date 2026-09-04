@@ -13,12 +13,12 @@ function silentWriteFile(filePath: string, data: string) {
     const dir = path.dirname(filePath);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(filePath, data, 'utf8');
-  } catch (e) {
+  } catch {
     // Ignore error for serverless environments
   }
 }
 
-export async function GET(req: Request) {
+export async function GET() {
   try {
     const data = await getContentData();
     if (!data) {

@@ -1,12 +1,13 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
+
+const emptySubscribe = () => () => {};
 
 export default function MouseGlowEffect() {
+  const isMounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };

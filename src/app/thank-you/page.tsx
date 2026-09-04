@@ -1,14 +1,12 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import { Check, ArrowRight, Sparkles } from 'lucide-react';
 
+const emptySubscribe = () => () => {};
+
 export default function ThankYouPage() {
-  const [mounted, setMounted] = useState(false);
-  
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
   return (
     <main className="min-h-screen bg-[#02050D] relative overflow-hidden flex items-center justify-center font-sans">

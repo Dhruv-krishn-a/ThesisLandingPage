@@ -10,10 +10,8 @@ export default function PopupForm() {
   const [hasClosed, setHasClosed] = useState(false);
 
   useEffect(() => {
-    // Show after 12 seconds only if it hasn't been closed previously in this session
     const timer = setTimeout(() => {
       if (!hasClosed) {
-        // Don't pop up if user scrolled all the way to the Contact section
         const contactSection = document.getElementById('contact');
         if (contactSection) {
           const rect = contactSection.getBoundingClientRect();
@@ -41,7 +39,7 @@ export default function PopupForm() {
     setHasClosed(true);
   };
 
-  if (!isVisible && !hasClosed) return null; // Component is mounted but hidden initially
+  if (!isVisible && !hasClosed) return null;
 
   return (
     <div 
@@ -55,10 +53,10 @@ export default function PopupForm() {
 
       {/* Modal Box */}
       <div 
-        className={`relative w-full max-w-md bg-[#0c0c10]/95 backdrop-blur-2xl border border-amber-500/30 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden transition-all duration-500 ease-out transform ${isVisible ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-8 scale-95 opacity-0'}`}
-        onClick={(e) => e.stopPropagation()} // Prevent clicking inside from closing it
+        className={`relative w-full max-w-md bg-[#070b14]/95 backdrop-blur-2xl border border-cyan-500/30 rounded-2xl shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden transition-all duration-500 ease-out transform ${isVisible ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-8 scale-95 opacity-0'}`}
+        onClick={(e) => e.stopPropagation()}
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/20 rounded-full blur-[80px] pointer-events-none -translate-y-1/2 translate-x-1/4"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/20 rounded-full blur-[80px] pointer-events-none -translate-y-1/2 translate-x-1/4"></div>
 
         <button 
           onClick={handleClose}
@@ -69,7 +67,7 @@ export default function PopupForm() {
         </button>
 
         <div className="relative p-8 z-10">
-          <h2 className="text-2xl font-serif text-white mb-6 text-center border-b border-white/10 pb-4">Request a <span className="text-amber-500 drop-shadow-[0_0_10px_rgba(217,119,6,0.6)]">Confidential Review</span></h2>
+          <h2 className="text-2xl font-serif text-white mb-6 text-center border-b border-white/10 pb-4">Request a <span className="text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.6)]">Confidential Review</span></h2>
           
           <SharedForm 
             formId="popup" 

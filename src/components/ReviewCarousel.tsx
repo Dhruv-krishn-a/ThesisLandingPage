@@ -5,18 +5,16 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import GoogleReviewCard, { GoogleReview } from './GoogleReviewCard';
 
 interface Props {
-  reviews: GoogleReview[];
+  reviews?: GoogleReview[];
 }
 
-export default function ReviewCarousel({ reviews }: Props) {
+export default function ReviewCarousel({ reviews = [] }: Props) {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Duplicate for seamless infinite loop
   const duplicatedReviews = reviews.length > 0 ? [...reviews, ...reviews, ...reviews] : [];
   const isSingle = reviews.length === 1;
 
-  // Auto-scrolling logic
   useEffect(() => {
     if (typeof window === 'undefined' || window.innerWidth < 768) return;
     if (isSingle || isHovered || !carouselRef.current) return;
@@ -24,7 +22,7 @@ export default function ReviewCarousel({ reviews }: Props) {
     let animationId: number;
     const scroll = () => {
       if (carouselRef.current) {
-        carouselRef.current.scrollLeft += 1; // Speed of auto-scroll
+        carouselRef.current.scrollLeft += 1;
         
         const singleSetWidth = carouselRef.current.scrollWidth / 3;
         if (carouselRef.current.scrollLeft >= singleSetWidth) {
@@ -67,10 +65,10 @@ export default function ReviewCarousel({ reviews }: Props) {
       </div>
 
       {/* Left Fade Overlay */}
-      <div className="absolute left-0 top-0 bottom-16 md:bottom-8 w-12 md:w-32 bg-gradient-to-r from-[#07070a] via-[#07070a]/80 to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute left-0 top-0 bottom-16 md:bottom-8 w-12 md:w-32 bg-gradient-to-r from-[#050811] via-[#050811]/80 to-transparent z-10 pointer-events-none"></div>
       
       {/* Right Fade Overlay */}
-      <div className="absolute right-0 top-0 bottom-16 md:bottom-8 w-12 md:w-32 bg-gradient-to-l from-[#07070a] via-[#07070a]/80 to-transparent z-10 pointer-events-none"></div>
+      <div className="absolute right-0 top-0 bottom-16 md:bottom-8 w-12 md:w-32 bg-gradient-to-l from-[#050811] via-[#050811]/80 to-transparent z-10 pointer-events-none"></div>
 
       {/* Navigation Arrows */}
       {!isSingle && (
@@ -79,17 +77,17 @@ export default function ReviewCarousel({ reviews }: Props) {
           <button 
             onClick={() => scrollByAmount(-380)}
             aria-label="Previous review"
-            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-[#0c0c12] border border-amber-500/40 items-center justify-center text-white shadow-[0_0_20px_rgba(0,0,0,0.8)] transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 hover:bg-amber-900/40 hover:border-amber-400"
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-[#070b14] border border-cyan-500/40 items-center justify-center text-white shadow-[0_0_20px_rgba(0,0,0,0.8)] transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 hover:bg-cyan-900/40 hover:border-cyan-400"
           >
-            <ChevronLeft className="w-6 h-6 text-amber-400" />
+            <ChevronLeft className="w-6 h-6 text-cyan-400" />
           </button>
           
           <button 
             onClick={() => scrollByAmount(380)}
             aria-label="Next review"
-            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-[#0c0c12] border border-amber-500/40 items-center justify-center text-white shadow-[0_0_20px_rgba(0,0,0,0.8)] transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 hover:bg-amber-900/40 hover:border-amber-400"
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-[#070b14] border border-cyan-500/40 items-center justify-center text-white shadow-[0_0_20px_rgba(0,0,0,0.8)] transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110 hover:bg-cyan-900/40 hover:border-cyan-400"
           >
-            <ChevronRight className="w-6 h-6 text-amber-400" />
+            <ChevronRight className="w-6 h-6 text-cyan-400" />
           </button>
 
           {/* Mobile Navigation Arrows */}
@@ -97,16 +95,16 @@ export default function ReviewCarousel({ reviews }: Props) {
             <button 
               onClick={() => scrollByAmount(-320)}
               aria-label="Previous review"
-              className="h-11 w-11 rounded-full bg-[#0c0c12] border border-amber-500/40 flex items-center justify-center text-white active:scale-95 shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+              className="h-11 w-11 rounded-full bg-[#070b14] border border-cyan-500/40 flex items-center justify-center text-white active:scale-95 shadow-[0_0_15px_rgba(0,0,0,0.5)]"
             >
-              <ChevronLeft className="w-5 h-5 text-amber-400" />
+              <ChevronLeft className="w-5 h-5 text-cyan-400" />
             </button>
             <button 
               onClick={() => scrollByAmount(320)}
               aria-label="Next review"
-              className="h-11 w-11 rounded-full bg-[#0c0c12] border border-amber-500/40 flex items-center justify-center text-white active:scale-95 shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+              className="h-11 w-11 rounded-full bg-[#070b14] border border-cyan-500/40 flex items-center justify-center text-white active:scale-95 shadow-[0_0_15px_rgba(0,0,0,0.5)]"
             >
-              <ChevronRight className="w-5 h-5 text-amber-400" />
+              <ChevronRight className="w-5 h-5 text-cyan-400" />
             </button>
           </div>
         </>

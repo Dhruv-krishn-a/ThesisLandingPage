@@ -27,7 +27,7 @@ export async function middleware(request: NextRequest) {
     // Verify the JWT token
     await jwtVerify(token, SECRET_KEY);
     return NextResponse.next();
-  } catch (error) {
+  } catch {
     // If token is invalid or expired
     const response = NextResponse.redirect(new URL('/admin/login', request.url));
     response.cookies.delete('admin_token');

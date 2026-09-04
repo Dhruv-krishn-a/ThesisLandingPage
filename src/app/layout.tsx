@@ -35,7 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
     if (data?.globalSettings?.seoDescription?.value) {
       description = data.globalSettings.seoDescription.value;
     }
-  } catch(e) {}
+  } catch {}
 
   return {
     title,

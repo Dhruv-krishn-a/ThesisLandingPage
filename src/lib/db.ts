@@ -39,7 +39,7 @@ export async function getContentData() {
   return null;
 }
 
-export async function saveContentData(payload: any) {
+export async function saveContentData(payload: unknown) {
   let dbSuccess = false;
   try {
     const client = await getClient();

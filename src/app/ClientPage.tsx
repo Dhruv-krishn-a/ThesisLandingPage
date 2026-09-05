@@ -416,10 +416,10 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
         </section>
 
         {/* Metrics Bar */}
-        <section className="py-12 md:py-16 border-y border-[#1e293b] bg-[#030712]/90 backdrop-blur-md z-10 relative">
+        <section className="py-8 md:py-12 px-4 sm:px-6 relative z-10">
           <FadeIn>
-            <div className="max-w-7xl mx-auto px-4 md:px-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-center">
+            <div className="max-w-7xl mx-auto relative z-10 py-10 md:py-12 border border-white/40 bg-white/95 backdrop-blur-xl shadow-[0_0_50px_rgba(255,255,255,0.15)] rounded-3xl lg:rounded-[2.5rem] px-6 md:px-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 items-center">
                  {content.metrics?.map((metric: ContentItem, i: number) => {
                     const cleanValue = (metric.value || '').replace(/,/g, '');
                     const numMatch = cleanValue.match(/\d+/);
@@ -429,24 +429,29 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
                     return (
                       <div 
                         key={i} 
-                        className={`flex flex-col items-center justify-center text-center px-4 py-5 md:py-3 relative ${
-                          content.metrics && i < content.metrics.length - 1 ? 'lg:border-r border-white/10' : ''
+                        className={`flex items-center gap-4 sm:gap-5 px-3 sm:px-4 lg:px-6 py-2 justify-start ${
+                          content.metrics && i < content.metrics.length - 1 ? 'lg:border-r border-slate-300' : ''
                         }`}
                       >
-                         <div className="min-h-[72px] flex items-center justify-center">
+                         {metric.icon === 'Clock' && <Clock className="w-9 h-9 sm:w-10 sm:h-10 text-slate-950 shrink-0 stroke-[2.2]" />}
+                         {metric.icon === 'Users' && <Users className="w-9 h-9 sm:w-10 sm:h-10 text-slate-950 shrink-0 stroke-[2.2]" />}
+                         {(metric.icon === 'FileCheck2' || metric.icon === 'FileText') && <FileText className="w-9 h-9 sm:w-10 sm:h-10 text-slate-950 shrink-0 stroke-[2.2]" />}
+                         {metric.icon === 'ShieldCheck' && <ShieldCheck className="w-9 h-9 sm:w-10 sm:h-10 text-slate-950 shrink-0 stroke-[2.2]" />}
+                         
+                         <div className="flex flex-col justify-center text-left">
                            {num !== null ? (
-                             <span className="text-5xl sm:text-6xl lg:text-6xl font-extrabold text-white tracking-tight leading-none drop-shadow-md">
+                             <span className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight leading-none">
                                <AnimatedCounter end={num} suffix={suffix} duration={2000} />
                              </span>
                            ) : (
-                             <span className="text-3xl sm:text-4xl lg:text-4xl font-extrabold text-white leading-tight tracking-tight drop-shadow-md">
-                               Confidential <br /> &amp; Ethical
+                             <span className="text-xl sm:text-2xl font-extrabold text-slate-950 leading-tight tracking-tight">
+                               Confidential &amp; <br className="hidden sm:inline" />Ethical
                              </span>
                            )}
-                         </div>
 
-                         <div className="text-xs sm:text-sm font-extrabold text-cyan-400 tracking-widest uppercase mt-3.5">
-                           {metric.label}
+                           <div className="text-xs sm:text-[13px] font-bold text-[#1e293b] tracking-wider uppercase mt-1.5 leading-tight">
+                             {metric.label}
+                           </div>
                          </div>
                       </div>
                     );

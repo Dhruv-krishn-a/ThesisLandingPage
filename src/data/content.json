@@ -114,17 +114,17 @@
   },
   "hero": {
     "button1": {
-      "value": "Get Thesis Guidance"
+      "value": "GET THESIS GUIDANCE"
     },
     "button2": {
       "value": "Talk to a Research Expert"
     },
     "headline": {
-      "value": "Stuck on Your Thesis? Get Expert Guidance to Move Forward."
+      "value": "Stuck on Your Thesis?\nGet Expert Guidance to Move Forward."
     },
     "description": [
       {
-        "value": "From research planning to final thesis preparation, get expert guidance at every stage of your research journey."
+        "value": "From understanding your research to working through your thesis, get personalized guidance at every stage of your research journey."
       }
     ],
     "integrityBold": {
@@ -138,79 +138,91 @@
   },
   "whyTrustUs": {
     "quote": {
-      "value": "We Don't Replace the Researcher. We Empower the Researcher.\nYou make the research decisions. You develop your work."
+      "value": ""
     },
     "heading": {
-      "value": "Finding Your Thesis Difficult to Manage?"
+      "value": "Struggling to Navigate Your Thesis?"
     },
     "features": [
       {
-        "icon": "TrendingUp",
+        "icon": "Search",
         "title": "Clear Problem",
-        "description": "Is my research problem clearly defined? Are my research objectives appropriate?"
+        "description": "Is my research problem clearly defined?"
       },
       {
-        "icon": "Globe",
+        "icon": "Target",
+        "title": "Objectives",
+        "description": "Are my research objectives appropriate and aligned with my study?"
+      },
+      {
+        "icon": "Layers",
         "title": "Methodology",
-        "description": "Am I using the right research methodology? How do I analyse findings?"
-      },
-      {
-        "icon": "Award",
-        "title": "Structure",
-        "description": "Are my chapters logically connected? How should I present my findings?"
+        "description": "Am I using the right research methodology?"
       },
       {
         "icon": "BookOpen",
-        "title": "Consistency",
-        "description": "Is my thesis academically structured and consistent?"
+        "title": "Literature Review",
+        "description": "How should I structure my literature review?"
+      },
+      {
+        "icon": "BarChart2",
+        "title": "Data Analysis",
+        "description": "How do I analyse and interpret my research findings?"
+      },
+      {
+        "icon": "Link",
+        "title": "Structure",
+        "description": "Are my thesis chapters logically connected?"
       }
-    ]
+    ],
+    "intro": "You may be unsure about:"
   },
   "trustedPartner": {
     "heading": {
       "value": "What Is Thesis Guidance?"
     },
     "ctaText1": {
-      "value": "We Don't Write Your Thesis for You."
+      "value": "We Don\u2019t Write Your Thesis for You."
     },
     "ctaText2": {
-      "value": "We help you understand, develop, review, and improve your own research work."
+      "value": "We guide you through the research process, explain what to do and why, review your work, and help you understand how to move forward."
     },
     "features": [
       {
-        "icon": "ShieldCheck",
-        "title": "One-on-One Research Mentorship",
-        "description": "Get personalized guidance based on your academic requirements."
+        "step": "1",
+        "title": "Research Direction",
+        "description": "Understanding the research problem, objectives, research questions, and overall direction of the study."
       },
       {
-        "icon": "Users",
-        "title": "Experienced Research Mentors",
-        "description": "Learn from professionals with knowledge across diverse domains."
+        "step": "2",
+        "title": "Thesis Structure",
+        "description": "Understanding the key chapters and sections of a thesis and how they connect with each other."
       },
       {
-        "icon": "FileCheck2",
-        "title": "Domain-Specific Guidance",
-        "description": "Customized to your research area."
+        "step": "3",
+        "title": "Research Methodology",
+        "description": "Understanding appropriate research methods, research design, sampling, data collection, and other methodological aspects."
       },
       {
-        "icon": "Activity",
-        "title": "Learn, Don't Just Receive",
-        "description": "We explain concepts so you can understand and apply them."
+        "step": "4",
+        "title": "Data Analysis & Interpretation",
+        "description": "Understanding how to approach data analysis, interpret research findings, and connect the results with the research objectives."
       },
       {
-        "icon": "BookOpen",
-        "title": "Continuous Research Support",
-        "description": "Get guidance as your research progresses."
-      },
-      {
-        "icon": "ArrowRight",
-        "title": "Constructive Review & Feedback",
-        "description": "Expert observations that help you identify weaknesses."
+        "step": "5",
+        "title": "Expert Guidance & Feedback",
+        "description": "Discussing research questions and challenges with experts and receiving feedback to improve clarity, approach, and overall research work."
       }
     ],
     "ctaHeading": {
-      "value": "You remain the researcher and author of your thesis."
-    }
+      "value": "You do the work. We provide the guidance."
+    },
+    "description": [
+      {
+        "value": "Thesis Guidance is a one-on-one research support service that helps researchers understand how to approach and work on their thesis with expert guidance throughout their research journey."
+      }
+    ],
+    "outro": "You work on your thesis. We provide the guidance to help you understand how."
   },
   "services": {
     "heading": {
@@ -218,27 +230,39 @@
     },
     "description": [
       {
-        "value": "Guidance across all chapters of your thesis."
+        "value": "Guidance across the key elements of your thesis."
       }
     ],
     "cards": [
       {
-        "id": "t1",
-        "icon": "BookOpen",
-        "title": "Research Topic & Literature",
-        "desc": "Get guidance on refining your topic, identifying gaps, and connecting previous research."
+        "title": "01. Research Problem & Objectives",
+        "desc": "Understand how to clarify your research problem, align your research objectives, and establish a clear direction for your thesis.",
+        "icon": "Target"
       },
       {
-        "id": "t2",
-        "icon": "Activity",
-        "title": "Methodology & Data Analysis",
-        "desc": "Guidance on research design, sampling, data collection, and interpreting findings."
+        "title": "02. Literature Review",
+        "desc": "Learn how to identify relevant studies, review existing research, identify research gaps, and connect the literature with your study.",
+        "icon": "BookOpen"
       },
       {
-        "id": "t3",
-        "icon": "Users",
-        "title": "Thesis Review & Defense",
-        "desc": "Constructive feedback on your structure and preparation for your viva defense."
+        "title": "03. Research Methodology",
+        "desc": "Understand how to approach research design, sampling, data collection, and other methodological aspects of your research.",
+        "icon": "Layers"
+      },
+      {
+        "title": "04. Data Analysis & Interpretation",
+        "desc": "Learn how to approach data analysis, understand your research findings, and interpret the results in relation to your research objectives.",
+        "icon": "BarChart2"
+      },
+      {
+        "title": "05. Thesis Chapters & Structure",
+        "desc": "Understand what each chapter of your thesis should communicate and how the different chapters connect with one another.",
+        "icon": "Link"
+      },
+      {
+        "title": "06. Findings, Discussion & Conclusion",
+        "desc": "Learn how to present your findings, connect them with existing research, approach the discussion, and draw meaningful conclusions from your study.",
+        "icon": "CheckCircle"
       }
     ]
   },
@@ -248,58 +272,121 @@
     },
     "description": [
       {
-        "value": "A structured approach to completing your thesis."
+        "value": "Personalized guidance to support you at every stage of your thesis journey."
       }
     ],
     "steps": [
       {
-        "step": "01",
+        "step": "1",
         "title": "Understand Your Research",
-        "desc": "We understand your topic, requirements, and current progress."
+        "desc": "We first understand your research topic, objectives, requirements, current progress, and the challenges you are facing with your thesis."
       },
       {
-        "step": "02",
-        "title": "Discuss Your Challenges",
-        "desc": "Connect with an expert and discuss areas where you need guidance."
+        "step": "2",
+        "title": "Identify What You Need",
+        "desc": "We identify the specific areas where you need clarity or guidance to work on your thesis."
       },
       {
-        "step": "03",
+        "step": "3",
+        "title": "Get Expert Guidance",
+        "desc": "Our experts explain the relevant research concepts, methods, and approaches and guide you according to your research and thesis requirements."
+      },
+      {
+        "step": "4",
         "title": "Learn & Apply",
-        "desc": "Our experts explain concepts so you can apply them to your work."
-      },
-      {
-        "step": "04",
-        "title": "Review & Improve",
-        "desc": "Share your progress and receive feedback to identify gaps."
+        "desc": "You learn how to approach different parts of your thesis and apply that knowledge while working on it yourself."
       }
     ]
   },
   "faqs": {
     "heading": {
-      "value": "Frequently Asked Questions"
+      "value": "FAQs"
     },
-    "description": [
-      {
-        "value": "Common questions about Thesis Guidance"
-      }
-    ],
+    "description": {
+      "value": "We don't write the thesis. We don't conduct the research. We teach, explain, guide, review, and help the researcher learn how to do it themselves."
+    },
     "items": [
       {
-        "q": "Does WRIRK write my thesis?",
-        "a": "No. WRIRK provides research guidance and mentorship. We do not write your thesis for you. Our experts guide you, explain research concepts, review your work, and provide constructive feedback."
+        "q": "1. Does WRIRK write the thesis for me?",
+        "a": "No. We do not write the thesis for you."
       },
       {
-        "q": "What areas of thesis work do you provide guidance on?",
-        "a": "We provide guidance across different stages of research, including research topic, problem statement, objectives, literature review, methodology, data analysis, interpretation, results, formatting, and thesis structure."
+        "q": "2. What does Thesis Guidance include?",
+        "a": "We provide complete, one-on-one guidance throughout your thesis journey, based on your research, requirements, and understanding."
       },
       {
-        "q": "Can I get guidance for a specific thesis chapter?",
-        "a": "Yes. You can discuss specific chapters, sections, or research challenges where you need expert guidance."
+        "q": "3. Can I get guidance if I am new to thesis research?",
+        "a": "Yes. Our experts explain research concepts and approaches in a way that helps you understand how to work on your thesis."
       },
       {
-        "q": "Can you help me prepare for my thesis defense?",
-        "a": "Yes. We can provide guidance to help you understand your research, explain your methodology and findings, and prepare to discuss your research during your thesis defense."
+        "q": "4. Can you review my thesis work?",
+        "a": "Yes. Our experts can review your work, provide constructive feedback, and help you understand areas that may need attention."
+      },
+      {
+        "q": "5. Is the guidance specific to my research domain?",
+        "a": "Yes. Guidance is customized to the research topic, domain, academic requirements, and stage of your work."
+      },
+      {
+        "q": "6. Can you help me understand research methodology?",
+        "a": "Yes. We explain relevant methodological approaches and help you understand how they relate to your research."
+      },
+      {
+        "q": "7. Can I get guidance if my thesis is already prepared?",
+        "a": "Yes. Guidance is personalized according to your research, current understanding, and the areas where you need further clarity."
+      },
+      {
+        "q": "8. Is the guidance provided online?",
+        "a": "Yes. Guidance is primarily provided through online interactions, subject to expert availability."
+      },
+      {
+        "q": "9. Can I get guidance if I have already started my thesis?",
+        "a": "Yes. You can receive guidance based on your current progress and discuss the areas where you need further clarity or feedback."
+      },
+      {
+        "q": "10. Will the thesis remain my own work?",
+        "a": "Absolutely. You remain the researcher and author. WRIRK provides guidance, mentorship, and feedback without writing the thesis on your behalf."
       }
+    ]
+  },
+  "whyChoose": {
+    "heading": "Why Choose WRIRK?",
+    "reasons": [
+      {
+        "title": "One-on-One Guidance",
+        "description": "Get personalized attention based on your research, thesis, and specific challenges."
+      },
+      {
+        "title": "Experienced Research Mentors",
+        "description": "Learn from experienced research professionals with expertise across diverse research domains."
+      },
+      {
+        "title": "Domain-Specific Support",
+        "description": "Receive guidance relevant to your research area rather than generic, one-size-fits-all instructions."
+      },
+      {
+        "title": "Learn Through Expert Guidance",
+        "description": "Understand the concepts, methods, and approaches behind your research and learn how to apply them yourself."
+      },
+      {
+        "title": "Review & Feedback",
+        "description": "Discuss your work with experts, clarify your doubts, and receive constructive feedback based on your research progress."
+      },
+      {
+        "title": "Researcher-Centric Approach",
+        "description": "You remain actively involved in your research at every stage. We provide the guidance and expertise while you make the research decisions."
+      }
+    ]
+  },
+  "whoCanBenefit": {
+    "heading": "Who Can Benefit?",
+    "intro": "Thesis Guidance can help:",
+    "audiences": [
+      "PhD Scholars",
+      "PhD Aspirants",
+      "Doctoral Researchers",
+      "Faculty Members & Academicians",
+      "Independent Researchers",
+      "Research Professionals"
     ]
   }
 }

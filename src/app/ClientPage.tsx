@@ -88,7 +88,12 @@ interface SiteContent {
   };
   metrics?: ContentItem[];
   whoWeHelp?: ContentSection;
-  whyTrustUs?: ContentSection;
+  strugglingSection?: {
+    heading?: string;
+    intro?: string;
+    points?: string[];
+    conclusion?: string;
+  };
   trustedPartner?: ContentSection;
   services?: ContentSection;
   modules?: ContentSection;
@@ -105,6 +110,7 @@ interface SiteContent {
     intro?: string;
     audiences?: string[];
   };
+  ourPhilosophy?: { tagline?: string; };
   reviews?: GoogleReview[];
   finalCta?: {
     tag?: ContentValue;
@@ -360,15 +366,7 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
                 {content.hero?.description?.map((p: { value: string }) => p.value).join(' ')}
               </p>
 
-              {/* Callout Box */}
-              <div className="bg-[#081226]/90 border-l-4 border-cyan-400 rounded-xl p-6 md:p-7 border-t border-r border-b border-cyan-500/20 shadow-xl backdrop-blur-md space-y-3">
-                <p className="text-cyan-400 font-bold text-lg md:text-xl">
-                  {content.hero?.integrityBold?.value || "You Write. We Guide."}
-                </p>
-                <p className="text-slate-300 text-sm md:text-base font-normal leading-relaxed">
-                  {content.hero?.integrityText?.map((p: { value: string }) => p.value).join(' ')}
-                </p>
-              </div>
+
 
               {/* CTA Action Bar */}
               <div className="pt-2 flex flex-wrap items-center gap-4">
@@ -471,54 +469,47 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
           </FadeIn>
         </section>
 
-        {/* 2. WHY TRUST US / FINDING YOUR THESIS DIFFICULT TO MANAGE? */}
-        <section className="py-20 md:py-28 px-6 relative z-10" id="why-trust-us">
-          <div className="max-w-6xl mx-auto">
-            
+        {/* 2. STRUGGLING SECTION */}
+        <section className="py-20 md:py-28 px-6 relative z-10" id="struggling">
+          <div className="max-w-4xl mx-auto">
             <FadeIn>
-              <div className="text-center max-w-4xl mx-auto mb-14">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 tracking-tight leading-tight [text-wrap:balance]">
-                  {content.whyTrustUs?.heading?.value || "Finding Your Thesis Difficult to Manage?"}
+              <div className="text-center mb-14">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 tracking-tight [text-wrap:balance]">
+                  {content.strugglingSection?.heading || "Struggling to Navigate Your Thesis?"}
                 </h2>
-                <div className="h-px w-24 bg-gradient-to-r from-cyan-400 to-indigo-500 mx-auto shadow-[0_0_10px_rgba(34,211,238,0.9)] mb-6"></div>
+                <div className="h-px w-24 bg-gradient-to-r from-cyan-400 to-indigo-500 mx-auto shadow-[0_0_10px_rgba(34,211,238,0.9)] mb-8"></div>
+                {content.strugglingSection?.intro && (
+                  <p className="text-slate-200 text-xl md:text-2xl font-normal">
+                    {content.strugglingSection.intro}
+                  </p>
+                )}
               </div>
             </FadeIn>
 
-            {/* 4 Feature Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 mb-12">
-              {content.whyTrustUs?.features?.map((feat: ContentItem, idx: number) => {
-                const IconComponent = getIcon(feat.icon, BookOpen);
-                return (
-                  <FadeIn key={idx} delay={idx * 40}>
-                    <div className="bg-[#070e1e]/80 backdrop-blur-xl border border-[#1e293b] hover:border-cyan-500/50 p-6 md:p-7 rounded-2xl flex items-start gap-5 hover:bg-[#0a152d] transition-all duration-300 group shadow-md">
-                      <div className="shrink-0 p-3.5 rounded-xl bg-cyan-950/80 text-cyan-400 border border-cyan-500/30 group-hover:scale-110 transition-transform">
-                        <IconComponent className="h-7 w-7" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl md:text-2xl font-extrabold text-white mb-2 group-hover:text-cyan-300 transition-colors">
-                          {feat.title}
-                        </h3>
-                        <p className="text-slate-200 text-base md:text-lg font-normal leading-relaxed">
-                          {feat.description}
-                        </p>
-                      </div>
+            <div className="space-y-4">
+              {content.strugglingSection?.points?.map((point: string, idx: number) => (
+                <FadeIn key={idx} delay={idx * 50}>
+                  <div className="flex items-center gap-4 bg-[#070e1e]/80 border border-[#1e293b] p-5 rounded-2xl shadow-sm hover:border-cyan-500/30 transition-colors">
+                    <div className="shrink-0 w-8 h-8 rounded-full bg-cyan-950/50 flex items-center justify-center text-cyan-400 border border-cyan-500/30">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     </div>
-                  </FadeIn>
-                );
-              })}
+                    <p className="text-slate-200 text-lg md:text-xl font-normal leading-relaxed">
+                      {point}
+                    </p>
+                  </div>
+                </FadeIn>
+              ))}
             </div>
 
-            {/* Section Quote / Conclusion */}
-            {content.whyTrustUs?.quote?.value && (
+            {content.strugglingSection?.conclusion && (
               <FadeIn delay={300}>
-                <div className="bg-gradient-to-r from-[#081226] via-[#0c1a38] to-[#081226] border border-cyan-500/40 rounded-2xl p-7 md:p-9 text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-                  <p className="text-cyan-200 text-xl md:text-2xl font-bold leading-relaxed whitespace-pre-line">
-                    &quot;{content.whyTrustUs.quote.value}&quot;
+                <div className="mt-12 text-center">
+                  <p className="text-cyan-200 text-xl md:text-2xl font-medium [text-wrap:balance]">
+                    {content.strugglingSection.conclusion}
                   </p>
                 </div>
               </FadeIn>
             )}
-
           </div>
         </section>
 
@@ -532,31 +523,15 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
                   {content.trustedPartner?.heading?.value || "What Is Thesis Guidance?"}
                 </h2>
                 <div className="h-px w-24 bg-gradient-to-r from-cyan-400 to-indigo-500 mx-auto shadow-[0_0_10px_rgba(34,211,238,0.9)] mb-6"></div>
-              </div>
-            </FadeIn>
-
-            {/* Highlight Banner */}
-            <FadeIn delay={150}>
-              <div className="bg-gradient-to-br from-[#081226] via-[#050b18] to-[#0c1a38] border-2 border-cyan-500/50 rounded-3xl p-9 md:p-14 text-center relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] group mb-14">
-                <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-[90px] pointer-events-none"></div>
-                
-                <Quote className="h-12 w-12 text-cyan-400 mx-auto mb-5 opacity-80" />
-
-                <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-5 tracking-tight [text-wrap:balance]">
-                  {content.trustedPartner?.ctaText1?.value || "We Don't Write Your Thesis for You."}
-                </h3>
-
-                <p className="text-slate-100 text-lg md:text-2xl font-normal leading-relaxed max-w-3xl mx-auto mb-7">
-                  {content.trustedPartner?.ctaText2?.value || "We help you understand, develop, review, and improve your own research work."}
-                </p>
-
-                {content.trustedPartner?.ctaHeading?.value && (
-                  <div className="inline-block px-7 py-3 rounded-full bg-cyan-500/15 border border-cyan-400/40 text-cyan-300 font-bold text-base md:text-lg tracking-wide">
-                    {content.trustedPartner.ctaHeading.value}
-                  </div>
+                {content.trustedPartner?.description && (
+                  <p className="text-slate-200 text-lg md:text-xl font-normal leading-relaxed mt-6">
+                    {Array.isArray(content.trustedPartner.description) ? content.trustedPartner.description.map((p: { value: string }) => p.value).join(' ') : content.trustedPartner.description.value}
+                  </p>
                 )}
               </div>
             </FadeIn>
+
+
 
             {/* 5 Guidance Pillars */}
             {content.trustedPartner?.features && (
@@ -586,10 +561,32 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
             )}
             
             <FadeIn delay={200}>
-              <div className="text-center mt-10 mb-14">
-                <p className="text-slate-200 text-xl font-medium">
-                  {content.trustedPartner?.outro || "You work on your thesis. We provide the guidance to help you understand how."}
-                </p>
+              <div className="max-w-4xl mx-auto mt-16 mb-10 p-8 md:p-12 bg-gradient-to-br from-[#0a152e] to-[#040a17] border border-cyan-500/20 rounded-3xl text-center shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-900/20 via-transparent to-transparent pointer-events-none"></div>
+                
+                {content.trustedPartner?.outro && (
+                  <p className="text-slate-200 text-lg md:text-xl font-medium mb-6 relative z-10">
+                    {content.trustedPartner.outro}
+                  </p>
+                )}
+                
+                {content.trustedPartner?.ctaText1?.value && (
+                  <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-6 tracking-tight relative z-10 [text-wrap:balance]">
+                    {content.trustedPartner.ctaText1.value}
+                  </h3>
+                )}
+                
+                {content.trustedPartner?.ctaText2?.value && (
+                  <p className="text-cyan-100/80 text-lg md:text-xl font-normal leading-relaxed mb-8 max-w-3xl mx-auto relative z-10">
+                    {content.trustedPartner.ctaText2.value}
+                  </p>
+                )}
+                
+                {content.trustedPartner?.ctaHeading?.value && (
+                  <div className="inline-block px-8 py-3 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 font-bold text-lg tracking-wide relative z-10 shadow-[0_0_20px_rgba(34,211,238,0.1)]">
+                    {content.trustedPartner.ctaHeading.value}
+                  </div>
+                )}
               </div>
             </FadeIn>
 
@@ -659,9 +656,11 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
                   {content.process?.heading?.value || "How Our Thesis Guidance Works"}
                 </h2>
                 <div className="h-px w-24 bg-gradient-to-r from-cyan-400 to-indigo-500 mx-auto shadow-[0_0_10px_rgba(34,211,238,0.9)] mb-4"></div>
-                <p className="text-slate-200 text-lg md:text-xl font-normal">
-                  {Array.isArray(content.process?.description) ? content.process?.description?.map((p: { value: string }) => p.value).join(' ') : content.process?.description?.value}
-                </p>
+                {content.process?.description && (
+                  <p className="text-slate-200 text-lg md:text-xl font-normal mt-6">
+                    {Array.isArray(content.process?.description) ? content.process?.description?.map((p: { value: string }) => p.value).join(' ') : content.process?.description?.value}
+                  </p>
+                )}
               </div>
             </FadeIn>
 
@@ -762,6 +761,8 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
           </div>
         </section>
 
+        
+
         {/* 6. TESTIMONIALS */}
         <section className="py-20 md:py-28 relative z-10 w-full overflow-hidden bg-[#02050e] border-y border-[#1e293b]" id="testimonials">
           <div className="w-full">
@@ -792,11 +793,7 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
                   {content.faqs?.heading?.value || "Frequently Asked Questions"}
                 </h2>
                 <div className="h-px w-24 bg-gradient-to-r from-cyan-400 to-indigo-500 mx-auto shadow-[0_0_10px_rgba(34,211,238,0.9)] mb-4"></div>
-                {content.faqs?.description && (
-                  <p className="text-slate-300 text-base md:text-lg">
-                    {Array.isArray(content.faqs.description) ? content.faqs.description.map((p: { value: string }) => p.value).join(' ') : content.faqs.description.value}
-                  </p>
-                )}
+
               </div>
             </FadeIn>
 
@@ -828,57 +825,31 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
           </div>
         </section>
 
-        {/* 8. FINAL CTA */}
+        {/* OUR PHILOSOPHY */}
+        {content.ourPhilosophy?.tagline && (
+          <section className="py-20 px-6 relative z-10 bg-[#02050e] border-y border-[#1e293b]" id="our-philosophy">
+            <div className="max-w-4xl mx-auto text-center">
+              <FadeIn>
+                <p className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-cyan-200 leading-relaxed [text-wrap:balance]">
+                  {content.ourPhilosophy.tagline}
+                </p>
+              </FadeIn>
+            </div>
+          </section>
+        )}
+
+                {/* FINAL CTA (FORM ONLY) */}
         <section className="pt-20 pb-40 md:pt-28 md:pb-64 px-6 relative z-10 overflow-hidden" id="final-cta">
           <FadeIn>
-            <div id="final-cta-card-box" className="max-w-6xl mx-auto bg-gradient-to-r from-[#060c19] via-[#0f192e] to-[#060c19] border-2 border-cyan-500/40 rounded-3xl p-9 md:p-14 relative shadow-[0_25px_70px_rgba(0,0,0,0.85)] overflow-hidden">
-              
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
-                
-                {/* Left Side */}
-                <div className="lg:col-span-6 space-y-6 text-left">
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-extrabold uppercase tracking-widest backdrop-blur-md">
-                    <Sparkles className="h-3.5 w-3.5 text-cyan-400" /> Thesis Research Mentorship
-                  </div>
-
-                  <h2 className="text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-tight [text-wrap:balance]">
-                    Ready to Complete Your Thesis with Confidence?
-                  </h2>
-
-                  <p className="text-slate-200 font-normal text-lg md:text-xl leading-relaxed">
-                    Get expert mentorship across your thesis chapters, methodology, data interpretation, and viva defense preparation.
-                  </p>
-
-                  <div className="p-5 rounded-xl bg-[#081226] border border-cyan-500/30 font-bold text-cyan-300 text-xl md:text-2xl">
-                    You Write. We Guide.
-                  </div>
-
-                  <div className="pt-2 flex flex-col gap-3.5">
-                    <div className="flex items-center gap-3.5 text-slate-100 text-base md:text-lg font-semibold">
-                      <CheckCircle className="h-5 w-5 text-cyan-400 shrink-0" />
-                      <span>Individualized Thesis Chapter Mentorship</span>
-                    </div>
-                    <div className="flex items-center gap-3.5 text-slate-100 text-base md:text-lg font-semibold">
-                      <CheckCircle className="h-5 w-5 text-cyan-400 shrink-0" />
-                      <span>100% Confidential & Authentic Guidance</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Side Form */}
-                <div className="lg:col-span-6" id="bottom-cta-card">
-                  <div className="bg-[#030712]/90 backdrop-blur-xl border border-[#1e293b] rounded-2xl p-7 md:p-9 shadow-2xl relative">
-                    <h3 className="text-2xl font-extrabold text-white mb-6 text-center border-b border-white/10 pb-4">Get Thesis Guidance</h3>
-                    <SharedForm 
-                      formId="bottom-cta" 
-                      buttonText={content.hero?.button1?.value || "Get Thesis Guidance"} 
-                      initialMessage={selectedModuleMessage}
-                    />
-                  </div>
-                </div>
-
+            <div id="final-cta-card-box" className="max-w-2xl mx-auto bg-gradient-to-r from-[#060c19] via-[#0f192e] to-[#060c19] border-2 border-cyan-500/40 rounded-3xl p-9 md:p-14 relative shadow-[0_25px_70px_rgba(0,0,0,0.85)] overflow-hidden">
+              <div id="bottom-cta-card">
+                <h3 className="text-2xl font-extrabold text-white mb-6 text-center border-b border-white/10 pb-4">Get Thesis Guidance</h3>
+                <SharedForm 
+                  formId="bottom-cta" 
+                  buttonText={content.hero?.button1?.value || "Get Thesis Guidance"} 
+                  initialMessage={selectedModuleMessage}
+                />
               </div>
-
             </div>
           </FadeIn>
         </section>

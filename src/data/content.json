@@ -126,56 +126,7 @@
       {
         "value": "From understanding your research to working through your thesis, get personalized guidance at every stage of your research journey."
       }
-    ],
-    "integrityBold": {
-      "value": "You Write. We Guide."
-    },
-    "integrityText": [
-      {
-        "value": "Instead of struggling alone, get expert guidance to understand what needs to be done and how to do it."
-      }
     ]
-  },
-  "whyTrustUs": {
-    "quote": {
-      "value": ""
-    },
-    "heading": {
-      "value": "Struggling to Navigate Your Thesis?"
-    },
-    "features": [
-      {
-        "icon": "Search",
-        "title": "Clear Problem",
-        "description": "Is my research problem clearly defined?"
-      },
-      {
-        "icon": "Target",
-        "title": "Objectives",
-        "description": "Are my research objectives appropriate and aligned with my study?"
-      },
-      {
-        "icon": "Layers",
-        "title": "Methodology",
-        "description": "Am I using the right research methodology?"
-      },
-      {
-        "icon": "BookOpen",
-        "title": "Literature Review",
-        "description": "How should I structure my literature review?"
-      },
-      {
-        "icon": "BarChart2",
-        "title": "Data Analysis",
-        "description": "How do I analyse and interpret my research findings?"
-      },
-      {
-        "icon": "Link",
-        "title": "Structure",
-        "description": "Are my thesis chapters logically connected?"
-      }
-    ],
-    "intro": "You may be unsure about:"
   },
   "trustedPartner": {
     "heading": {
@@ -270,11 +221,6 @@
     "heading": {
       "value": "How Our Thesis Guidance Works"
     },
-    "description": [
-      {
-        "value": "Personalized guidance to support you at every stage of your thesis journey."
-      }
-    ],
     "steps": [
       {
         "step": "1",
@@ -301,9 +247,6 @@
   "faqs": {
     "heading": {
       "value": "FAQs"
-    },
-    "description": {
-      "value": "We don't write the thesis. We don't conduct the research. We teach, explain, guide, review, and help the researcher learn how to do it themselves."
     },
     "items": [
       {
@@ -387,6 +330,21 @@
       "Faculty Members & Academicians",
       "Independent Researchers",
       "Research Professionals"
+    ]
+  },
+  "ourPhilosophy": {
+    "tagline": "We don't write the thesis. We don't conduct the research. We teach, explain, guide, review, and help the researcher learn how to do it themselves."
+  },
+  "strugglingSection": {
+    "heading": "Struggling to Navigate Your Thesis?",
+    "intro": "You may be unsure about:",
+    "points": [
+      "Is my research problem clearly defined?",
+      "Are my research objectives appropriate and aligned with my study?",
+      "Am I using the right research methodology?",
+      "How should I structure my literature review?",
+      "How do I analyse and interpret my research findings?",
+      "Are my thesis chapters logically connected?"
     ]
   }
 }

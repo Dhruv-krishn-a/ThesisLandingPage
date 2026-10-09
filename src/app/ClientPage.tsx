@@ -103,6 +103,7 @@ interface SiteContent {
   faqs?: ContentSection;
   whyChoose?: {
     heading?: string;
+    subheading?: string;
     reasons?: ContentItem[];
   };
   whoCanBenefit?: {
@@ -191,7 +192,6 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [scrollPercent, setScrollPercent] = useState(0);
-  const [selectedModuleMessage, setSelectedModuleMessage] = useState('');
   const [isHeroFormHighlighted, setIsHeroFormHighlighted] = useState(false);
   
   const processRef = useRef<HTMLDivElement>(null);
@@ -260,28 +260,6 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
     }, 2400);
   };
 
-  const handleGuidanceClick = (cardTitle?: string) => {
-    if (cardTitle) {
-      setSelectedModuleMessage(`I need guidance on: ${cardTitle}`);
-    }
-    const targetElement = document.getElementById('final-cta-card-box') || document.getElementById('bottom-cta-card');
-    if (targetElement) {
-      const elementRect = targetElement.getBoundingClientRect();
-      const absoluteElementTop = elementRect.top + window.pageYOffset;
-      const middleOffset = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
-      window.scrollTo({
-        top: Math.max(0, middleOffset),
-        behavior: 'smooth'
-      });
-      setTimeout(() => {
-        const messageInput = document.getElementById('bottom-cta-message');
-        if (messageInput) {
-          messageInput.focus();
-        }
-      }, 500);
-    }
-  };
-
   return (
     <main className="min-h-screen bg-[#030712] text-slate-300 font-sans selection:bg-cyan-600/30 relative overflow-x-hidden">      
       <style dangerouslySetInnerHTML={{__html: `
@@ -306,7 +284,6 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
           {/* Navigation Links */}
           <nav className="hidden lg:flex items-center gap-10 text-sm font-bold uppercase tracking-widest">
             {[
-              { label: 'SERVICES', href: '#services' },
               { label: 'PROCESS', href: '#process' },
               { label: 'TESTIMONIALS', href: '#testimonials' },
               { label: 'FAQS', href: '#faqs' }
@@ -523,13 +500,18 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
                   {content.trustedPartner?.heading?.value || "What Is Thesis Guidance?"}
                 </h2>
                 <div className="h-px w-24 bg-gradient-to-r from-cyan-400 to-indigo-500 mx-auto shadow-[0_0_10px_rgba(34,211,238,0.9)] mb-6"></div>
-                {content.trustedPartner?.description && (
-                  <p className="text-slate-200 text-lg md:text-xl font-normal leading-relaxed mt-6">
-                    {Array.isArray(content.trustedPartner.description) ? content.trustedPartner.description.map((p: { value: string }) => p.value).join(' ') : content.trustedPartner.description.value}
-                  </p>
-                )}
               </div>
             </FadeIn>
+
+            {content.trustedPartner?.description && (
+              <div className="text-slate-200 text-lg md:text-xl font-normal leading-relaxed mb-14 max-w-4xl mx-auto text-center md:text-left">
+                <FadeIn delay={100}>
+                  <p className="p-7 rounded-2xl bg-[#070e1e]/90 border border-[#1e293b]">
+                    {Array.isArray(content.trustedPartner.description) ? content.trustedPartner.description.map((p: { value: string }) => p.value).join(' ') : content.trustedPartner.description.value}
+                  </p>
+                </FadeIn>
+              </div>
+            )}
 
 
 
@@ -561,9 +543,11 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
             )}
             
             <FadeIn delay={200}>
-              <div className="max-w-4xl mx-auto mt-16 mb-10 p-8 md:p-12 bg-gradient-to-br from-[#0a152e] to-[#040a17] border border-cyan-500/20 rounded-3xl text-center shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-900/20 via-transparent to-transparent pointer-events-none"></div>
+              <div className="bg-gradient-to-br from-[#081226] via-[#050b18] to-[#0c1a38] border-2 border-cyan-500/50 rounded-3xl p-9 md:p-14 text-center relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.8)] group max-w-4xl mx-auto mt-16 mb-10">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-[90px] pointer-events-none"></div>
                 
+                <Quote className="h-12 w-12 text-cyan-400 mx-auto mb-5 opacity-80" />
+
                 {content.trustedPartner?.outro && (
                   <p className="text-slate-200 text-lg md:text-xl font-medium mb-6 relative z-10">
                     {content.trustedPartner.outro}
@@ -571,19 +555,19 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
                 )}
                 
                 {content.trustedPartner?.ctaText1?.value && (
-                  <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-6 tracking-tight relative z-10 [text-wrap:balance]">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-5 tracking-tight relative z-10 [text-wrap:balance] uppercase">
                     {content.trustedPartner.ctaText1.value}
                   </h3>
                 )}
                 
                 {content.trustedPartner?.ctaText2?.value && (
-                  <p className="text-cyan-100/80 text-lg md:text-xl font-normal leading-relaxed mb-8 max-w-3xl mx-auto relative z-10">
+                  <p className="text-cyan-200 text-lg sm:text-xl md:text-2xl font-medium leading-relaxed max-w-3xl mx-auto relative z-10 [text-wrap:balance]">
                     {content.trustedPartner.ctaText2.value}
                   </p>
                 )}
                 
                 {content.trustedPartner?.ctaHeading?.value && (
-                  <div className="inline-block px-8 py-3 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 font-bold text-lg tracking-wide relative z-10 shadow-[0_0_20px_rgba(34,211,238,0.1)]">
+                  <div className="inline-block mt-6 px-8 py-3 rounded-full bg-cyan-500/15 border border-cyan-400/40 text-cyan-300 font-bold text-base md:text-lg tracking-wide shadow-[0_0_20px_rgba(34,211,238,0.1)]">
                     {content.trustedPartner.ctaHeading.value}
                   </div>
                 )}
@@ -593,58 +577,6 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
           </div>
         </section>
 
-        {/* 4. WHAT WE GUIDE YOU WITH (services) */}
-        <section className="py-20 md:py-28 px-6 relative z-10" id="services">
-          <div className="max-w-7xl mx-auto">
-            
-            <FadeIn>
-              <div className="text-center max-w-4xl mx-auto mb-16">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 tracking-tight [text-wrap:balance]">
-                  {content.services?.heading?.value || "What We Guide You With"}
-                </h2>
-                <div className="h-px w-24 bg-gradient-to-r from-cyan-400 to-indigo-500 mx-auto shadow-[0_0_10px_rgba(34,211,238,0.9)] mb-6"></div>
-                <p className="text-slate-200 text-lg md:text-xl font-normal">
-                  {Array.isArray(content.services?.description) ? content.services?.description?.map((p: { value: string }) => p.value).join(' ') : content.services?.description?.value}
-                </p>
-              </div>
-            </FadeIn>
-
-            {/* Service Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-              {content.services?.cards?.map((card: ContentItem, idx: number) => {
-                const IconComponent = getIcon(card.icon, BookOpen);
-                return (
-                  <FadeIn key={idx} delay={idx * 60}>
-                    <div className="bg-[#070e1e]/80 backdrop-blur-xl border border-[#1e293b] hover:border-cyan-500/50 p-7 md:p-8 rounded-2xl hover:bg-[#0c1834] transition-all duration-500 group shadow-lg flex flex-col justify-between h-full">
-                      <div>
-                        <div className="w-14 h-14 rounded-xl bg-[#09152a] border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 group-hover:border-cyan-400 transition-all duration-300 shadow-inner">
-                          <IconComponent className="h-7 w-7 stroke-[1.75]" />
-                        </div>
-                        <h3 className="text-2xl font-extrabold text-white mb-3 group-hover:text-cyan-300 transition-colors [text-wrap:balance]">
-                          {card.title}
-                        </h3>
-                        <p className="text-slate-300 text-base font-normal leading-relaxed">
-                          {card.desc}
-                        </p>
-                      </div>
-                      
-                      {/* Clickable Expert Guidance Button that scrolls to final CTA card */}
-                      <button
-                        type="button"
-                        onClick={() => handleGuidanceClick(card.title)}
-                        className="pt-5 mt-5 border-t border-[#1e293b] flex items-center gap-2.5 text-sm font-extrabold uppercase text-cyan-400 hover:text-cyan-300 opacity-90 group-hover:opacity-100 transition-all cursor-pointer w-full text-left group/btn"
-                      >
-                        <span>Expert Guidance</span>
-                        <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </button>
-                    </div>
-                  </FadeIn>
-                );
-              })}
-            </div>
-
-          </div>
-        </section>
 
         {/* 5. HOW OUR THESIS GUIDANCE WORKS (process) */}
         <section className="py-20 md:py-28 px-6 relative z-10 bg-[#02050e] border-y border-[#1e293b]" id="process" ref={processRef}>
@@ -708,6 +640,11 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
                   {content.whyChoose?.heading || "Why Choose WRIRK?"}
                 </h2>
                 <div className="h-px w-24 bg-gradient-to-r from-cyan-400 to-indigo-500 mx-auto shadow-[0_0_10px_rgba(34,211,238,0.9)] mb-6"></div>
+                {content.whyChoose?.subheading && (
+                  <p className="text-slate-200 text-lg md:text-xl font-normal max-w-3xl mx-auto">
+                    {content.whyChoose.subheading}
+                  </p>
+                )}
               </div>
             </FadeIn>
 
@@ -722,7 +659,14 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
                           <IconComponent className="h-6 w-6" />
                         </div>
                         <h3 className="text-xl font-extrabold text-white [text-wrap:balance]">
-                          {reason.title}
+                          {reason.title?.includes('|') ? (
+                            <>
+                              <span className="text-cyan-400 font-mono mr-2">{reason.title.split('|')[0].trim()} |</span>
+                              <span>{reason.title.split('|')[1].trim()}</span>
+                            </>
+                          ) : (
+                            reason.title
+                          )}
                         </h3>
                       </div>
                       <p className="text-slate-300 text-base font-normal leading-relaxed">
@@ -837,22 +781,6 @@ export default function ClientPage({ initialContent }: { initialContent: SiteCon
             </div>
           </section>
         )}
-
-                {/* FINAL CTA (FORM ONLY) */}
-        <section className="pt-20 pb-40 md:pt-28 md:pb-64 px-6 relative z-10 overflow-hidden" id="final-cta">
-          <FadeIn>
-            <div id="final-cta-card-box" className="max-w-2xl mx-auto bg-gradient-to-r from-[#060c19] via-[#0f192e] to-[#060c19] border-2 border-cyan-500/40 rounded-3xl p-9 md:p-14 relative shadow-[0_25px_70px_rgba(0,0,0,0.85)] overflow-hidden">
-              <div id="bottom-cta-card">
-                <h3 className="text-2xl font-extrabold text-white mb-6 text-center border-b border-white/10 pb-4">Get Thesis Guidance</h3>
-                <SharedForm 
-                  formId="bottom-cta" 
-                  buttonText={content.hero?.button1?.value || "Get Thesis Guidance"} 
-                  initialMessage={selectedModuleMessage}
-                />
-              </div>
-            </div>
-          </FadeIn>
-        </section>
 
       </div> {/* End Main Content Wrapper */}
 

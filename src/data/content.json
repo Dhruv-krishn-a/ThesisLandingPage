@@ -13,7 +13,7 @@
     {
       "icon": "FileCheck2",
       "label": "Researchers Supported",
-      "value": "1,000+"
+      "value": "12,000+"
     },
     {
       "icon": "ShieldCheck",
@@ -81,7 +81,7 @@
   ],
   "globalSettings": {
     "seoTitle": {
-      "value": "Guidance Support for Researchers | WRIRK"
+      "value": "PhD Thesis Guidance for Research Scholars | Wrirk"
     },
     "callNumber": {
       "type": "text",
@@ -92,7 +92,7 @@
       "value": "contact@wrirk.com"
     },
     "seoDescription": {
-      "value": "Get professional guidance for research. WRIRK helps researchers improve quality and write with confidence."
+      "value": "Get professional guidance for your PhD thesis from experienced research experts, with support that meets your research needs."
     },
     "whatsappNumber": {
       "value": "+919548521859"
@@ -124,7 +124,7 @@
     },
     "description": [
       {
-        "value": "From understanding your research to working through your thesis, get personalized guidance at every stage of your research journey."
+        "value": "From refining your research idea to developing your thesis, get personalized academic guidance to navigate every stage of your research journey with greater clarity and confidence."
       }
     ]
   },
@@ -142,27 +142,27 @@
       {
         "step": "1",
         "title": "Research Direction",
-        "description": "Understanding the research problem, objectives, research questions, and overall direction of the study."
+        "description": "Clarifying your research problem, objectives, research questions, and overall study direction in the context of your specific research topic."
       },
       {
         "step": "2",
         "title": "Thesis Structure",
-        "description": "Understanding the key chapters and sections of a thesis and how they connect with each other."
+        "description": "Understanding how to organise the chapters and sections of your thesis according to your research topic and how each chapter connects with the others."
       },
       {
         "step": "3",
         "title": "Research Methodology",
-        "description": "Understanding appropriate research methods, research design, sampling, data collection, and other methodological aspects."
+        "description": "Identifying appropriate research methods, research design, sampling techniques, data collection approaches, and other methodological aspects suited to your specific study."
       },
       {
         "step": "4",
         "title": "Data Analysis & Interpretation",
-        "description": "Understanding how to approach data analysis, interpret research findings, and connect the results with the research objectives."
+        "description": "Understanding how to approach data analysis, interpret your research findings, and connect the results with your specific research objectives."
       },
       {
         "step": "5",
         "title": "Expert Guidance & Feedback",
-        "description": "Discussing research questions and challenges with experts and receiving feedback to improve clarity, approach, and overall research work."
+        "description": "Discussing your research questions, topic-specific challenges, and study approach with experts to receive personalised feedback and strengthen your overall research work."
       }
     ],
     "ctaHeading": {
@@ -170,7 +170,7 @@
     },
     "description": [
       {
-        "value": "Thesis Guidance is a one-on-one research support service that helps researchers understand how to approach and work on their thesis with expert guidance throughout their research journey."
+        "value": "Thesis Guidance is personalized, one-on-one research support that helps scholars navigate their thesis journey with greater clarity and confidence from understanding their research direction to developing and refining their academic work."
       }
     ],
     "outro": "You work on your thesis. We provide the guidance to help you understand how."
@@ -292,31 +292,32 @@
     ]
   },
   "whyChoose": {
-    "heading": "Why Choose WRIRK?",
+    "heading": "WHY CHOOSE WRIRK?",
+    "subheading": "Research Guidance That Puts You at the Centre of Your Journey.",
     "reasons": [
       {
-        "title": "One-on-One Guidance",
-        "description": "Get personalized attention based on your research, thesis, and specific challenges."
+        "title": "01 | PERSONALIZED ONE-ON-ONE GUIDANCE",
+        "description": "Receive undivided attention tailored to your research topic, progress, and specific challenges."
       },
       {
-        "title": "Experienced Research Mentors",
-        "description": "Learn from experienced research professionals with expertise across diverse research domains."
+        "title": "02 | EXPERIENCED RESEARCH MENTORS",
+        "description": "Gain insights from research professionals with experience across diverse academic domains."
       },
       {
-        "title": "Domain-Specific Support",
-        "description": "Receive guidance relevant to your research area rather than generic, one-size-fits-all instructions."
+        "title": "03 | DOMAIN-SPECIFIC SUPPORT",
+        "description": "Get guidance relevant to your subject and research needs—not generic, one-size-fits-all advice."
       },
       {
-        "title": "Learn Through Expert Guidance",
-        "description": "Understand the concepts, methods, and approaches behind your research and learn how to apply them yourself."
+        "title": "04 | LEARN WITH EXPERT SUPPORT",
+        "description": "Understand the concepts, methods, and techniques behind your research so you can apply them to your own work."
       },
       {
-        "title": "Review & Feedback",
-        "description": "Discuss your work with experts, clarify your doubts, and receive constructive feedback based on your research progress."
+        "title": "05 | CONSTRUCTIVE REVIEW & FEEDBACK",
+        "description": "Discuss your work, clarify doubts, and identify opportunities to strengthen your research approach."
       },
       {
-        "title": "Researcher-Centric Approach",
-        "description": "You remain actively involved in your research at every stage. We provide the guidance and expertise while you make the research decisions."
+        "title": "06 | A RESEARCHER-FIRST APPROACH",
+        "description": "Stay actively involved at every stage. You remain the author and decision-maker while we provide guidance to help you move forward."
       }
     ]
   },

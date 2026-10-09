@@ -24,8 +24,8 @@ import { getContentData } from '@/lib/db';
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
-  let title = "WRIrk - Premium Publication Support & Academic Services";
-  let description = "Navigate the complex landscape of high-impact publishing. We empower scholars to achieve recognition in Scopus, Web of Science, and UGC-CARE indexed journals seamlessly.";
+  let title = "PhD Thesis Guidance for Research Scholars | Wrirk";
+  let description = "Get professional guidance for your PhD thesis from experienced research experts, with support that meets your research needs.";
   
   try {
     const data = await getContentData();
@@ -40,9 +40,17 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title,
     description,
-    keywords: "Publication Support, Publication Assistance, Publish Research Paper, Research Paper Publication, Journal Publication Help",
+    keywords: "PhD Thesis Guidance, Thesis Support, PhD Research Guidance, Thesis Writing Assistance, Thesis Mentorship, Academic Research Help",
     alternates: {
-      canonical: "https://publication.wrirk.in/",
+      canonical: "https://thesis-guidance.wrirk.in/",
+    },
+    openGraph: {
+      type: "website",
+      url: "https://thesis-guidance.wrirk.in/",
+      title,
+      description,
+      siteName: "Wrirk",
+      locale: "en_IN",
     },
     robots: {
       index: true,
@@ -72,7 +80,7 @@ export default function RootLayout({
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-MVL7QH95');
+            })(window,document,'script','dataLayer','GTM-52Z4Z5QQ');
           `}
         </Script>
 
@@ -149,8 +157,8 @@ export default function RootLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "WRIRK Publication Support",
-            "url": "https://publication.wrirk.in/"
+            "name": "WRIRK Thesis Guidance",
+            "url": "https://thesis-guidance.wrirk.in/"
           })
         }} />
       </head>
@@ -158,7 +166,7 @@ export default function RootLayout({
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe 
-            src="https://www.googletagmanager.com/ns.html?id=GTM-MVL7QH95"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-52Z4Z5QQ"
             height="0" 
             width="0" 
             style={{ display: "none", visibility: "hidden" }}

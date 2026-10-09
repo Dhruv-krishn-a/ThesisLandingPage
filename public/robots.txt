@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://publication.wrirk.in/sitemap.xml
+
+Sitemap: https://thesis-guidance.wrirk.in/sitemap.xml
